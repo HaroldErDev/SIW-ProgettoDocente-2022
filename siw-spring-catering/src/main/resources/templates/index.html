@@ -6,18 +6,68 @@
 	<title>Catering</title>
 </head>
 <body>
-	<div class="image">
-		<img src="/images/cucina.jpg" />
-	</div>
+	<nav>
+		<div id="nav-container">
+			<div class="main-title">
+				<strong>Servizi Di Catering</strong>
+			</div>
+		
+			<div class="links">
+				<a th:href="@{/}">HOME</a>
+				&emsp;
+				<a th:href="@{/}">INFORMAZIONI</a>
+				&emsp;
+				<a th:href="@{/}">ACCEDI</a>
+			</div>
+		</div>
+	</nav>
 	
-	<div id="flex-container">
+	<header>
+		<img src="/images/cucina.jpg" />
+	</header>
+	
+	<section>
+		<div id="flex-container">
 			<div class="flex-item">
-				<a th:href="@{/}">Chef</a>
+				<img src="/images/chef.jpg" />
+				
+				<div class="title">
+					<strong>CHEF</strong>
+				</div>
+				
+				<div class="info">
+					Dai un'occhiata ai nostri migliori chef.<br>
+					Qui puoi trovare i buffet proposti da ogni nostro chef.
+				</div>
+				
+				<div class="button">
+					<a th:href="@{/}">SCOPRI DI PIÙ</a>
+				</div>
 			</div>
 			
 			<div class="flex-item">
-				<a th:href="@{/}">Buffet</a>
+				<img src="/images/buffet.jpg" />
+				
+				<div class="title">
+					<strong>BUFFET</strong>
+				</div>
+				
+				<div class="info">
+					Dai un'occhiata ai buffet proposti dai nostri migliori chef.<br>
+					Qui puoi trovare tutti i piatti e gli ingredienti proposti in ogni buffet.
+				</div>
+				
+				<div class="button">
+					<a th:href="@{/}">SCOPRI DI PIÙ</a>
+				</div>
 			</div>
 		</div>
+	</section>
+	
+	<footer>
+		<div class="footer-info">
+			Progetto realizzato da: Tiziano Tinari
+		</div>
+	</footer>
 </body>
 </html>
