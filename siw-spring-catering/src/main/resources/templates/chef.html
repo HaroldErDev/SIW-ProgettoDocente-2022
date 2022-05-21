@@ -6,11 +6,56 @@
 	<title>Chef</title>
 </head>
 <body>
-	<nav></nav>
+	<nav>
+		<div id="nav-container">
+			<div class="main-title">
+				<strong>Chef</strong>
+			</div>
+		
+			<div class="links">
+				<a th:href="@{/}">HOME</a>
+				&emsp;
+				<a th:href="@{/}">INFORMAZIONI</a>
+				&emsp;
+				<a th:href="@{/}">ACCEDI</a>
+			</div>
+		</div>
+	</nav>
 	
-	<header></header>
+	<header>
+		<img src="/images/chefGroup.jpg" />
+	</header>
 	
-	<section></section>
+	<section>
+		<div id="chef-container">
+			<div class="chef-item" th:each="c : ${chef}">
+				<div class="image">
+					<img th:src="@{${'/images/chef/' + c.cognome + '.jpg'}}" />
+				</div>
+				
+				<div class="desc">
+					<div class="desc-title">
+						<strong>CHEF</strong>
+					</div>
+					
+					<div class="chef-desc">
+						<strong>Nome: </strong><span th:text="${c.nome}">Null</span><br>
+						<strong>Cognome: </strong><span th:text="${c.cognome}">Null</span><br>
+						<strong>Nazionalità: </strong><span th:text="${c.nazionalita}">Null</span><br>
+					</div>
+					
+					<div class="desc-title">
+						<strong>BUFFET</strong>
+					</div>
+					
+					<div class="chef-desc">
+						<a th:href="@{/}">Buffet 1</a>
+						<a th:href="@{/}">Buffet 2</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	
 	<footer>
 		<div class="footer-info">

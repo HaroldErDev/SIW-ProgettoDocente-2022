@@ -7,6 +7,86 @@ nav {
 	height: 75px;
 }
 
+#nav-container {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-title strong {
+	font-family: serif;
+	font-style: italic;
+	font-size: 30px;
+	color: white;
+	letter-spacing: 2px;
+}
+
+.links a {
+	text-decoration: none;
+	font-family: monospace;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: lightgrey;
+}
+
+.links a:hover {
+	color: white;
+}
+
+header {
+	height: 600px;
+}
+
+header img {
+	width: 99.9%;
+	height: 600px;
+	border: 1px solid black;
+}
+
+section {
+	margin: 75px 100px;
+}
+
+#chef-container {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+}
+
+.chef-item {
+	display: flex;
+	flex-direction: row;
+	height: 400px;
+	padding-bottom: 50px;
+}
+
+.image img {
+	width: 400px;
+	height: 400px;
+	border: 1px solid blue;
+}
+
+.desc {
+	padding-left: 20px;
+	font-family: monospace;
+}
+
+.desc-title {
+	font-size: 30px;
+	letter-spacing: 5px;
+	color: #c0c0c0;
+	padding-bottom: 5px;
+}
+
+.chef-desc {
+	font-size: 25px;
+	padding-bottom: 50px;
+}
+
 footer {
 	background-color: black;
 	height: 100px;
