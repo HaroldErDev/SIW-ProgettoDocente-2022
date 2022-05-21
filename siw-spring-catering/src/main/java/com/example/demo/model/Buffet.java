@@ -30,7 +30,7 @@ public class Buffet {
 	@ManyToOne
 	private Chef chef;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany
 	@JoinColumn(name = "buffet_id")
 	private List<Piatto> piatti;
 	

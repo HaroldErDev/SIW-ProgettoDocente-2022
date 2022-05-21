@@ -17,11 +17,7 @@ public class Ingrediente {
 	@NotBlank
 	private String nome;
 	
-	@NotBlank
 	private String descrizione;
-	
-	@Column(nullable = false)
-	@NotBlank
 	private String origine;
 	
 	public Long getId() {

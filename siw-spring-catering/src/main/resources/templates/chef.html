@@ -16,8 +16,6 @@
 				<a th:href="@{/}">HOME</a>
 				&emsp;
 				<a th:href="@{/}">INFORMAZIONI</a>
-				&emsp;
-				<a th:href="@{/}">ACCEDI</a>
 			</div>
 		</div>
 	</nav>
@@ -48,9 +46,8 @@
 						<strong>BUFFET</strong>
 					</div>
 					
-					<div class="chef-desc">
-						<a th:href="@{/}">Buffet 1</a>
-						<a th:href="@{/}">Buffet 2</a>
+					<div class="chef-desc" th:each="b : ${c.buffet}">
+						<a th:href="@{'/buffet' + '/' + ${b.id}}"><span th:text="${b.nome}"></span></a>
 					</div>
 				</div>
 			</div>

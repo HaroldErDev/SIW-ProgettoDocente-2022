@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/buffet.css" rel="stylesheet">
+	<title>Buffet</title>
+</head>
+<body>
+	<nav>
+		<div id="nav-container">
+			<div class="main-title">
+				<strong>Buffet</strong>
+			</div>
+		
+			<div class="links">
+				<a th:href="@{/}">HOME</a>
+				&emsp;
+				<a th:href="@{/}">INFORMAZIONI</a>
+			</div>
+		</div>
+	</nav>
+	
+	<header>
+		<img src="/images/buffetGroup.jpg" />
+	</header>
+	
+	<section>
+		<div id="buffet-container">
+			<div class="title">
+				<strong th:text="${buffet.nome}">Buffet Name</strong>
+			</div>
+			
+			<div class="buffet-desc">
+				<p th:text="${buffet.descrizione}">Non è presente una descrizione per questo buffet.</p>
+			</div>
+			
+			<div class="chef">
+				Buffet proposto dallo chef&nbsp;<a th:href="@{/chef}" th:text="${buffet.chef.nome} + ' ' + ${buffet.chef.cognome}">Chef Name</a>
+			</div>
+		</div>
+		
+		<div id="piatti-container">
+			<div class="title">
+				<strong>Piatti</strong>
+			</div>
+			
+			<div class="piatto-desc" th:each="piatto : ${buffet.piatti}">
+				<div class="piatto">
+					<span class="nome" th:text="${piatto.nome}"></span><br>
+					
+					<strong class="ingredienti-title">Ingredienti: </strong>
+					
+					<span class="ingredienti" th:each="ingrediente : ${piatto.ingredienti}">
+						<a th:href="@{/}" th:text="${ingrediente.nome}"></a>,
+					</span>
+				</div>
+				
+				<hr>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+		<div class="footer-info">
+			Progetto realizzato da: Tiziano Tinari
+		</div>
+	</footer>
+</body>
+</html>
