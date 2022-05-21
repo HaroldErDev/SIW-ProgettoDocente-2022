@@ -1,0 +1,21 @@
+body {
+	margin: 0;
+}
+
+nav {
+	background-color: black;
+	height: 75px;
+}
+
+footer {
+	background-color: black;
+	height: 100px;
+}
+
+.footer-info {
+	color: lightgrey;
+	font-family: monospace;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 35px;
+}
