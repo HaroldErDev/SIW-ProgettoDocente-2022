@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	background-color: #dedede;
 }
 
 nav {
@@ -69,7 +70,7 @@ div.flex-item img {
 	font-family: monospace;
 	font-size: 50px;
 	letter-spacing: 5px;
-	color: #c0c0c0;
+	color: grey;
 }
 
 .info {

@@ -1,6 +1,7 @@
 body, html {
 	margin: 0;
 	height: 100%;
+	background-color: #dedede;
 }
 
 nav {
@@ -36,6 +37,15 @@ nav {
 
 .links a:hover {
 	color: white;
+}
+
+section {
+	margin: 75px 100px;
+}
+
+p {
+	font-family: monospace;
+	font-size: 30px;
 }
 
 footer {
