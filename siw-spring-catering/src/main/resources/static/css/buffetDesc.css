@@ -1,0 +1,133 @@
+body, html {
+	margin: 0;
+	height: 100%;
+}
+
+nav {
+	background-color: black;
+	height: 75px;
+}
+
+#nav-container {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-title strong {
+	font-family: serif;
+	font-style: italic;
+	font-size: 30px;
+	color: white;
+	letter-spacing: 2px;
+}
+
+.links a {
+	text-decoration: none;
+	font-family: monospace;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: lightgrey;
+}
+
+.links a:hover {
+	color: white;
+}
+
+section {
+	margin: 75px 100px;
+}
+
+#buffet-container {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+div.title {
+	font-family: monospace;
+	font-size: 50px;
+	color: blue;
+	letter-spacing: 3px;
+	padding-bottom: 10px;
+}
+
+div.buffet-desc {
+	font-family: Helvetica;
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+
+div.chef {
+	font-family: monospace;
+	font-style: italic;
+	font-size: 20px;
+}
+
+div.chef a {
+	font-style: normal;
+	font-weight: bold;
+	color: black;
+}
+
+div.chef a:hover {
+	color: lightblue;
+}
+
+#piatti-container {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	text-align: center;
+}
+
+.piatto-desc {
+	margin-left: 300px;
+	margin-right: 300px;
+}
+
+.piatto .nome {
+	font-family: monospace;
+	font-size: 30px;
+}
+
+.piatto .ingredienti-title {
+	font-style: Helvetica;
+	font-size: 20px;
+}
+
+.piatto .ingredienti {
+	font-style: italic;
+	font-size: 20px;
+}
+
+.piatto .ingredienti a {
+	text-decoration: none;
+	color: black;
+}
+
+.piatto .ingredienti a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	background-color: black;
+	height: 100px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.footer-info {
+	color: lightgrey;
+	font-family: monospace;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 35px;
+}

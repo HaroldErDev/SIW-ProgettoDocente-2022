@@ -1,5 +1,6 @@
-body {
+body, html {
 	margin: 0;
+	height: 100%;
 }
 
 nav {
@@ -37,52 +38,12 @@ nav {
 	color: white;
 }
 
-header {
-	height: 600px;
-}
-
-header img {
-	width: 99.9%;
-	height: 600px;
-	border: 1px solid black;
-}
-
-section {
-	margin: 75px 100px;
-}
-
-#buffet-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin: 20px;
-}
-
-.buffet-item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding: 20px;
-	border: 2px solid black;
-	background-color: blue;
-}
-
-.buffet-item a {
-	font-family: monospace;
-	font-size: 30px;
-	text-decoration: none;
-	color: white;
-}
-
-.buffet-item a:hover {
-	text-decoration: underline;
-}
-
 footer {
 	background-color: black;
 	height: 100px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 .footer-info {

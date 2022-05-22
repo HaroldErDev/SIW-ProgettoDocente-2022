@@ -20,7 +20,7 @@ public class ChefController {
 	@GetMapping("/chef")
 	public String getAllChef(Model model) {
 		List<Chef> chef = chefService.findAll();
-		model.addAttribute("chef", chef);
+		model.addAttribute("chefList", chef);
 		return "chef.html";
 	}
 	

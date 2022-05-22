@@ -15,7 +15,7 @@
 			<div class="links">
 				<a th:href="@{/}">HOME</a>
 				&emsp;
-				<a th:href="@{/}">INFORMAZIONI</a>
+				<a th:href="@{/informazioni}">INFORMAZIONI</a>
 			</div>
 		</div>
 	</nav>
@@ -26,7 +26,7 @@
 	
 	<section>
 		<div id="chef-container">
-			<div class="chef-item" th:each="chef : ${chef}">
+			<div class="chef-item" th:each="chef : ${chefList}">
 				<div class="image">
 					<img th:src="@{${'/images/chef/' + chef.cognome + '.jpg'}}" />
 				</div>

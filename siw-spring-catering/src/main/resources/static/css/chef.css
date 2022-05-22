@@ -53,7 +53,7 @@ section {
 
 #chef-container {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: wrap; /* Avvolge i flex-item (li manda a capo se riempono una riga del flex-container */
 	flex-direction: row;
 	align-items: flex-start;
 }
