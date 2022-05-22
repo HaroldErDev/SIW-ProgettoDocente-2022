@@ -25,4 +25,8 @@ public class ChefService {
 		return chef;
 	}
 	
+	public Chef findChefById(Long id) {
+		return chefRepository.findById(id).get();
+	}
+	
 }

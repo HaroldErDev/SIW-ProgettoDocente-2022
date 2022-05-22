@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link href="/css/chefDesc.css" rel="stylesheet">
+	<title>Chef</title>
+</head>
+<body>
+	<nav>
+		<div id="nav-container">
+			<div class="main-title">
+				<strong>Chef</strong>
+			</div>
+		
+			<div class="links">
+				<a th:href="@{/}">HOME</a>
+				&emsp;
+				<a th:href="@{/}">INFORMAZIONI</a>
+			</div>
+		</div>
+	</nav>
+	
+	<section>
+		<div id="chef-container">
+			<div class="chef-card">
+				<div class="header">
+					<img th:src="@{${'/images/chef/' + chef.cognome + '.jpg'}}" />
+				</div>
+				
+				<div class="info">
+					<strong>Nome: </strong><span th:text="${chef.nome}">Nome</span><br>
+					<strong>Cognome: </strong><span th:text="${chef.cognome}">Cognome</span><br>
+					<strong>Nazionalità: </strong><span th:text="${chef.nazionalita}">Nazionalità</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="title">
+			<strong>BUFFET</strong>
+	    </div>
+	    
+	    <hr>
+	   
+		<div class="buffet">
+			<div class="button" th:each="buffet : ${chef.buffet}">
+				<a th:href="@{'/buffet' + '/' + ${buffet.id}}" th:text="${buffet.nome}">Buffet</a>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+		<div class="footer-info">
+			Progetto realizzato da: Tiziano Tinari
+		</div>
+	</footer>
+</body>
+</html>

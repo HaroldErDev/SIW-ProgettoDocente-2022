@@ -43,19 +43,6 @@ header img {
 	border: 1px solid black;
 }
 
-footer {
-	background-color: black;
-	height: 100px;
-}
-
-.footer-info {
-	color: lightgrey;
-	font-family: monospace;
-	font-size: 20px;
-	text-align: center;
-	padding-top: 35px;
-}
-
 section {
 	margin: 75px 100px;
 }
@@ -107,4 +94,17 @@ div.flex-item img {
 
 .button a:hover {
 	background-color: #0080ff;
+}
+
+footer {
+	background-color: black;
+	height: 100px;
+}
+
+.footer-info {
+	color: lightgrey;
+	font-family: monospace;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 35px;
 }

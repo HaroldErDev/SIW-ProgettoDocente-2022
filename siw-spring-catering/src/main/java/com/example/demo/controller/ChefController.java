@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.model.Chef;
 import com.example.demo.service.ChefService;
@@ -21,6 +22,13 @@ public class ChefController {
 		List<Chef> chef = chefService.findAll();
 		model.addAttribute("chef", chef);
 		return "chef.html";
+	}
+	
+	@GetMapping("/chef/{id}")
+	public String getChef(@PathVariable("id") Long id, Model model) {
+		Chef chef = chefService.findChefById(id);
+		model.addAttribute("chef", chef);
+		return "chefDesc.html";
 	}
 	
 }

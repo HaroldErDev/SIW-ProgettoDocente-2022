@@ -35,7 +35,8 @@
 			</div>
 			
 			<div class="chef">
-				Buffet proposto dallo chef&nbsp;<a th:href="@{/chef}" th:text="${buffet.chef.nome} + ' ' + ${buffet.chef.cognome}">Chef Name</a>
+				Buffet proposto dallo chef
+				<a th:href="@{'/chef' + '/' + ${buffet.chef.id}}" th:text="${buffet.chef.nome} + ' ' + ${buffet.chef.cognome}">Chef Name</a>
 			</div>
 		</div>
 		

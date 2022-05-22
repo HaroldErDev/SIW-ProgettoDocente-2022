@@ -80,14 +80,12 @@ div.chef {
 }
 
 div.chef a {
-	text-decoration: none;
 	font-style: normal;
 	font-weight: bold;
-	color: blue;
+	color: black;
 }
 
 div.chef a:hover {
-	text-decoration: underline;
 	color: lightblue;
 }
 

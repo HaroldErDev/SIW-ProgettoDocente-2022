@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8" />
 	<link href="/css/chef.css" rel="stylesheet">
-	<title>Chef</title>
+	<title>Chef Group</title>
 </head>
 <body>
 	<nav>
 		<div id="nav-container">
 			<div class="main-title">
-				<strong>Chef</strong>
+				<strong>I Nostri Migliori Chef</strong>
 			</div>
 		
 			<div class="links">
@@ -26,28 +26,14 @@
 	
 	<section>
 		<div id="chef-container">
-			<div class="chef-item" th:each="c : ${chef}">
+			<div class="chef-item" th:each="chef : ${chef}">
 				<div class="image">
-					<img th:src="@{${'/images/chef/' + c.cognome + '.jpg'}}" />
+					<img th:src="@{${'/images/chef/' + chef.cognome + '.jpg'}}" />
 				</div>
 				
 				<div class="desc">
-					<div class="desc-title">
-						<strong>CHEF</strong>
-					</div>
-					
-					<div class="chef-desc">
-						<strong>Nome: </strong><span th:text="${c.nome}">Null</span><br>
-						<strong>Cognome: </strong><span th:text="${c.cognome}">Null</span><br>
-						<strong>Nazionalità: </strong><span th:text="${c.nazionalita}">Null</span><br>
-					</div>
-					
-					<div class="desc-title">
-						<strong>BUFFET</strong>
-					</div>
-					
-					<div class="chef-desc" th:each="b : ${c.buffet}">
-						<a th:href="@{'/buffet' + '/' + ${b.id}}"><span th:text="${b.nome}"></span></a>
+					<div class="link">
+						<a th:href="@{'/chef' + '/' + ${chef.id}}" th:text="${chef.nome} + ' ' + ${chef.cognome}">Chef</a>
 					</div>
 				</div>
 			</div>

@@ -37,56 +37,68 @@ nav {
 	color: white;
 }
 
-header {
-	height: 600px;
-}
-
-header img {
-	width: 99.9%;
-	height: 600px;
-	border: 1px solid black;
-}
-
 section {
-	margin: 75px 100px;
+	margin: 75px 200px;
 }
 
 #chef-container {
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: row;
-	align-items: flex-start;
+	justify-content: center;
 }
 
-.chef-item {
+.chef-card {
 	width: 400px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	margin: 12.8px;
-}
-
-.image {
-	height: 400px;
-}
-
-.desc {
-	padding: 10px;
-	font-size: 20px;
-	font-family: monospace;
-	height: 60px;
 	text-align: center;
 }
 
-.link {
-	padding-top: 20px;
+.header {
+	height: 400px;
 }
 
-.link a {
+.info {
+	padding: 10px;
+	font-size: 20px;
+	font-family: monospace;
+}
+
+.info strong {
+	font-style: italic;
+}
+
+.title {
+	font-family: monospace;
+	font-size: 50px;
+	letter-spacing: 3px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.buffet {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-family: monospace;
+}
+
+.button {
+	margin: 25px 10px;
+}
+
+.button a {
+	background-color: blue;
 	text-decoration: none;
-	color: black;
+	padding: 15px 20px;
+	font-size: 20px;
+	color: white;
+	border-radius: 50px;
 }
 
-.link a:hover {
-	text-decoration: underline;
+.button a:hover {
+	background-color: #0080ff;
 }
 
 footer {
@@ -96,8 +108,8 @@ footer {
 
 .footer-info {
 	color: lightgrey;
-	font-family: monospace;
 	font-size: 20px;
+	font-family: monospace;
 	text-align: center;
 	padding-top: 35px;
 }
