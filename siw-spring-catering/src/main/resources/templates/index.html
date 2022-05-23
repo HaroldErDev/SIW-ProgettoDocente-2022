@@ -2,27 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/index.css" rel="stylesheet">
+	<link th:href="@{/css/index.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
 	<title>Catering</title>
 </head>
 <body>
-	<nav>
-		<div id="nav-container">
-			<div class="main-title">
-				<strong>Servizi Di Catering</strong>
-			</div>
-		
-			<div class="links">
-				<a th:href="@{/}">HOME</a>
-				&emsp;
-				<a th:href="@{/informazioni}">INFORMAZIONI</a>
-				&emsp;
-				<a th:href="@{/}">REGISTRATI</a>
-				&emsp;
-				<a th:href="@{/}">ACCEDI</a>
-			</div>
-		</div>
-	</nav>
+	<nav th:replace="fragments/base.html :: navigation"></nav>
 	
 	<header>
 		<img src="/images/cucina.jpg" />
@@ -66,10 +51,6 @@
 		</div>
 	</section>
 	
-	<footer>
-		<div class="footer-info">
-			Progetto realizzato da: Tiziano Tinari
-		</div>
-	</footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

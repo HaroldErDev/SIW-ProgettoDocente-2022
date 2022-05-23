@@ -2,21 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/buffetDesc.css" rel="stylesheet">
+	<link th:href="@{/css/buffetDesc.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
 	<title>Buffet</title>
 </head>
 <body>
-	<nav>
-		<div id="nav-container">
-			<div class="main-title">
-				<strong>Buffet</strong>
-			</div>
-		
-			<div class="links">
-				<a th:href="@{/}">HOME</a>
-			</div>
-		</div>
-	</nav>
+	<nav th:replace="fragments/base.html :: navigation"></nav>
 	
 	<section>
 		<div id="buffet-container">
@@ -44,10 +35,11 @@
 					<span class="nome" th:text="${piatto.nome}"></span><br>
 					
 					<strong class="ingredienti-title">Ingredienti: </strong>
-					
 					<span class="ingredienti" th:each="ingrediente : ${piatto.ingredienti}">
-						<a th:href="@{/}" th:text="${ingrediente.nome}"></a>,
+						<a th:href="@{'/ingrediente' + '/' + ${ingrediente.id}}" th:text="${ingrediente.nome}"></a>,
 					</span>
+					
+					<div class="desc" th:text="${piatto.descrizione}"></div>
 				</div>
 				
 				<hr>
@@ -55,10 +47,6 @@
 		</div>
 	</section>
 	
-	<footer>
-		<div class="footer-info">
-			Progetto realizzato da: Tiziano Tinari
-		</div>
-	</footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

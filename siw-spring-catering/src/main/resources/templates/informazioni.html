@@ -2,21 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link href="/css/informazioni.css" rel="stylesheet">
+	<link th:href="@{/css/informazioni.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
 	<title>Informazioni</title>
 </head>
 <body>
-	<nav>
-		<div id="nav-container">
-			<div class="main-title">
-				<strong>Informazioni</strong>
-			</div>
-		
-			<div class="links">
-				<a th:href="@{/}">HOME</a>
-			</div>
-		</div>
-	</nav>
+	<nav th:replace="fragments/base.html :: navigation"></nav>
 	
 	<section>
 		<p>
@@ -28,10 +19,6 @@
 		</p>
 	</section>
 	
-	<footer>
-		<div class="footer-info">
-			Progetto realizzato da: Tiziano Tinari
-		</div>
-	</footer>
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

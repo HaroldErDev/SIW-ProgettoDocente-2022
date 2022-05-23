@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	background-color: #dedede;
+}
+
+nav {
+	background-color: black;
+	height: 75px;
+}
+
+#nav-container {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-title strong {
+	font-family: serif;
+	font-style: italic;
+	font-size: 30px;
+	color: white;
+	letter-spacing: 2px;
+}
+
+.links a {
+	text-decoration: none;
+	font-family: monospace;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: lightgrey;
+}
+
+.links a:hover {
+	color: white;
+}
+
+footer {
+	background-color: black;
+	height: 100px;
+}
+
+.footer-info {
+	color: lightgrey;
+	font-family: monospace;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 40px;
+}
