@@ -43,7 +43,7 @@ public class ChefController {
 	@GetMapping("/chefForm")
 	public String getChef(Model model) {
 		model.addAttribute("chef", new Chef());
-		return "chefForm.html";
+		return "admin/chefForm.html";
 	}
 	
 	@PostMapping("/chef")
@@ -56,14 +56,14 @@ public class ChefController {
 			return "admin/home.html";
 		}
 		
-		return "chefForm.html";
+		return "admin/chefForm.html";
 	}
 	
 	@GetMapping("/deleteChefForm")
 	public String deleteChef(Model model) {
 		List<Chef> chefList = this.chefService.findAll();
 		model.addAttribute("chefList", chefList);
-		return "deleteChefForm.html";
+		return "admin/deleteChefForm.html";
 	}
 	
 	@PostMapping("/deleteChef/{id}")
