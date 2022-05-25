@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/home.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Operazioni</title>
+</head>
+<body>
+	<section>
+		<strong class="titolo">Operazioni</strong><hr>
+		<div class="operazioni">
+			<div><a th:href="@{/chefForm}">Aggiungi Chef</a></div>
+			<div><a th:href="@{/deleteChefForm}">Elimina Chef</a></div>
+			<div><a th:href="@{/admin/home}">Aggiungi Buffet</a></div>
+			<div><a th:href="@{/admin/home}">Elimina Buffet</a></div>
+		</div>
+	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+section {
+	margin: 75px 100px;
+	font-family: monospace;
+}
+
+.titolo {
+	font-size: 50px;
+	letter-spacing: 2px;
+	color: red;
+}
+
+hr {
+	height: 5px;
+	background-color: red;
+	border: none;
+}
+
+.operazioni {
+	margin-top: 50px;
+}
+
+.operazioni > div {
+	margin-top: 40px;
+	font-size: 30px;
+}
+
+.operazioni > div a {
+	background-color: blue;
+	text-decoration: none;
+	padding: 15px 20px;
+	font-size: 20px;
+	color: white;
+	border-radius: 50px;
+	font-family: monospace;
+}
+
+.operazioni > div a:hover {
+	background-color: #0080ff;
+}

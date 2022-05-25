@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/chefForm.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Aggiungi Chef</title>
+</head>
+<body>
+	<h1>Aggiungi Chef</h1>
+	<form th:action="@{/chef}" method="POST" th:object="${chef}">
+		<div th:if="${#fields.hasGlobalErrors()}">
+			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+		</div>
+		
+		<div>
+			Nome: <input type="text" th:field="*{nome}" />
+			<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+		</div>
+		
+		<div>
+			Cognome: <input type="text" th:field="*{cognome}" />
+			<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+		</div>
+		
+		<div>
+			Nazionalità: <input type="text" th:field="*{nazionalita}" />
+			<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+		</div>
+		
+		<div>
+			<button type="submit">Conferma</button> <a th:href="@{/admin/home}">Annulla</a>
+		</div>
+	</form>
+</body>
+</html>

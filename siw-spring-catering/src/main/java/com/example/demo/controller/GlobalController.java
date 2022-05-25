@@ -12,4 +12,9 @@ public class GlobalController {
 		return "informazioni.html";
 	}
 	
+	@GetMapping("/admin/home")
+	public String getPaginaOperazioniAmministratore(Model model) {
+		return "admin/home.html";
+	}
+	
 }
