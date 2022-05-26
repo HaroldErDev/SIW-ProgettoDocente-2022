@@ -2,21 +2,27 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/home.css}" rel="stylesheet">
+	<link th:href="@{/css/deleteChefForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
 	<title>Elimina Chef</title>
 </head>
 <body>
-	<h1>Scegli lo Chef da eliminare</h1>
-	<div th:each="chef : ${chefList}">
-		<form th:action="@{'/deleteChef' + '/' + ${chef.id}}" method="POST">
-			<ul>
-				<li>
-					<span th:text="${chef.nome} + ' ' + ${chef.cognome}"></span>
-					<span><button>Rimuovi</button></span>
-				</li>
-			</ul>
-		</form>
-	</div>
+	<section>
+		<strong class="titolo">Elimina Chef</strong><hr>
+		<div th:each="chef : ${chefList}">
+			<form th:action="@{'/deleteChef' + '/' + ${chef.id}}" method="POST">
+				<ul>
+					<li>
+						<span th:text="${chef.nome} + ' ' + ${chef.cognome} + ' (' + ${chef.nazionalita} + ')'"></span>
+						<span><button>Rimuovi</button></span>
+					</li>
+				</ul>
+			</form>
+		</div>
+		
+		<div class="annulla">
+			<a th:href="@{/admin/home}">Annulla</a>
+		</div>
+	</section>
 </body>
 </html>

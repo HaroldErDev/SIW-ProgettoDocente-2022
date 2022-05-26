@@ -5,10 +5,10 @@
 	<link th:fragment="style" th:href ="@{/css/base.css}" rel="stylesheet">
 </head>
 <body>
-	<nav th:fragment="navigation">
+	<nav th:fragment="navigation(title)">
 		<div id="nav-container">
 			<div class="main-title">
-				<strong>Catering</strong>
+				<strong th:text="${title}"></strong>
 			</div>
 		
 			<div class="links">

@@ -1,0 +1,44 @@
+section {
+	margin: 75px 100px;
+	font-family: monospace;
+	background-color: white;
+	border-radius: 5px;
+	border: 2px solid red;
+}
+
+.titolo {
+	font-size: 50px;
+	letter-spacing: 2px;
+	color: red;
+	margin-left: 20px;
+}
+
+hr {
+	height: 2px;
+	background-color: red;
+	border: none;
+}
+
+form {
+	font-size: 20px;
+}
+
+button {
+	font-size: 18px;
+	font-family: monospace;
+}
+
+.annulla {
+	margin: 20px 20px;	
+}
+
+.annulla a {
+	font-size: 18px;
+	text-decoration: none;
+	color: black;
+}
+
+.annulla a:hover {
+	text-decoration: underline;
+}
+
