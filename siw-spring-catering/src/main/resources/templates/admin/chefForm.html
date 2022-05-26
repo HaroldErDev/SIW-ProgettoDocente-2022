@@ -2,31 +2,31 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/chefForm.css}" rel="stylesheet">
+	<link th:href="@{/css/chefForm.css?}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
 	<title>Aggiungi Chef</title>
 </head>
 <body>
 	<section>
 		<strong class="titolo">Aggiungi Chef</strong><hr>
-		<form th:action="@{/chef}" method="POST" th:object="${chef}">
+		<form th:action="@{/admin/chef}" method="POST" th:object="${chef}">
 			<div th:if="${#fields.hasGlobalErrors()}">
-				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+				<span class="error" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>
 			</div>
 			
-			<div>
+			<div class="form-box">
 				<span class="input-title">Nome: </span><input type="text" th:field="*{nome}" />
-				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+				<span class="error" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>
 			
-			<div>
+			<div class="form-box">
 				<span class="input-title">Cognome: </span><input type="text" th:field="*{cognome}" />
-				<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+				<span class="error" th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
 			</div>
 			
-			<div>
+			<div class="form-box">
 				<span class="input-title">Nazionalità: </span><input type="text" th:field="*{nazionalita}" />
-				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+				<span class="error" th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
 			</div>
 			
 			<div class="confirm-block">

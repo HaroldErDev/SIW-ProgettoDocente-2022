@@ -12,11 +12,12 @@
 			</div>
 		
 			<div class="links">
-				<a th:href="@{/}">HOME</a>
-				&emsp;
-				<a th:href="@{/informazioni}">INFORMAZIONI</a>
-				&emsp;
-				<a th:href="@{/admin/home}">OPERAZIONI</a>
+				<span><a th:href="@{/}">HOME</a></span>
+				<span><a th:href="@{/informazioni}">INFORMAZIONI</a></span>
+				<span sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/admin/home}">OPERAZIONI</a></span>
+				<span sec:authorize="!isAuthenticated()"><a th:href="@{/register}">REGISTRATI</a></span>
+				<span sec:authorize="!isAuthenticated()"><a th:href="@{/login}">ACCEDI</a></span>
+				<span sec:authorize="isAuthenticated()"><a th:href="@{/logout}">ESCI</a></span>
 			</div>
 		</div>
 	</nav>

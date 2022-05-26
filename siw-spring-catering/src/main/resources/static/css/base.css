@@ -26,6 +26,10 @@ nav {
 	letter-spacing: 2px;
 }
 
+.links > span {
+	margin-left: 20px;
+}
+
 .links a {
 	text-decoration: none;
 	font-family: monospace;

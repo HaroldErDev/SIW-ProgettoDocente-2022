@@ -28,6 +28,16 @@ form {
 	margin: 20px 20px;
 }
 
+.error {
+	text-decoration: underline;
+	color: red;
+	font-size: 20px;
+}
+
+.form-box {
+	margin-top: 10px;
+}
+
 input {
 	width: 20%;
 }
