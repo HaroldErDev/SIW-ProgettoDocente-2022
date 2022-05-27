@@ -1,3 +1,5 @@
+/* Login & Register */
+
 section {
 	margin: 75px 100px;
 	border: 5px solid grey;
@@ -17,7 +19,6 @@ section {
 
 .insertion-box input {
 	width: 20%;
-	height: 30%;
 }
 
 .error {
@@ -66,5 +67,28 @@ button:hover::before {
 }
 
 .register a:hover {
+	text-decoration: underline;
+}
+
+/* Register Successful */
+
+.register-successful {
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+.click-here {
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+
+.click-here a {
+	text-decoration: none;
+	color: red;
+}
+
+.click-here a:hover {
 	text-decoration: underline;
 }

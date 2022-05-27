@@ -19,25 +19,24 @@ hr {
 	border: none;
 }
 
-.operazioni {
-	margin: 50px 20px;
+.chef-container {
+	font-size: 25px;
 }
 
-.operazioni > div {
-	margin-top: 40px;
-	font-size: 30px;
-}
-
-.operazioni > div a {
-	background-color: blue;
-	text-decoration: none;
-	padding: 15px;
-	font-size: 20px;
-	color: white;
-	border: 1px solid black;
+span {
 	font-family: monospace;
 }
 
-.operazioni > div a:hover {
+a {
+	font-family: monospace;
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+	margin-left: 10px;
+	background-color: blue;
+	border: 1px solid black;
+}
+
+a:hover {
 	background-color: #0080ff;
 }

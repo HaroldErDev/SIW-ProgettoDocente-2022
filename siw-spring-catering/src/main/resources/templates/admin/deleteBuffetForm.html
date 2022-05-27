@@ -2,19 +2,19 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/deleteChefForm.css}" rel="stylesheet">
+	<link th:href="@{/css/deleteBuffetForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Elimina Chef</title>
+	<title>Elimina Buffet</title>
 </head>
 <body>
 	<section>
-		<strong class="titolo">Elimina Chef</strong><hr>
+		<strong class="titolo">Elimina Buffet</strong><hr>
 		
-		<div th:each="chef : ${chefList}">
-			<form th:action="@{'/admin/deleteChef' + '/' + ${chef.id}}" method="POST">
+		<div th:each="buffet : ${buffetList}">
+			<form th:action="@{'/admin/deleteBuffet' + '/' + ${buffet.id}}" method="POST">
 				<ul>
 					<li>
-						<span th:text="${chef.nome} + ' ' + ${chef.cognome}"></span>
+						<span th:text="${buffet.nome}"></span>
 						<span><button>Rimuovi</button></span>
 					</li>
 				</ul>

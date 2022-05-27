@@ -19,8 +19,35 @@ hr {
 	border: none;
 }
 
-form {
+.input-title {
+	font-family: monospace;
 	font-size: 20px;
+}
+
+form {
+	margin: 20px 20px;
+}
+
+.error {
+	text-decoration: underline;
+	color: red;
+	font-size: 20px;
+}
+
+.form-box {
+	margin-top: 10px;
+}
+
+textarea {
+	resize: none;
+}
+
+input {
+	width: 20%;
+}
+
+.confirm-block {
+	margin-top: 20px;
 }
 
 button {
@@ -28,16 +55,12 @@ button {
 	font-family: monospace;
 }
 
-.annulla {
-	margin: 20px 20px;	
-}
-
-.annulla a {
-	font-size: 18px;
+.confirm-block > a {
 	text-decoration: none;
+	font-size: 18px;
 	color: black;
 }
 
-.annulla a:hover {
+.confirm-block > a:hover {
 	text-decoration: underline;
 }

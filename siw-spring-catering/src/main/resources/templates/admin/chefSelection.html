@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/chefSelection.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Operazioni</title>
+</head>
+<body>
+	<section>
+		<strong class="titolo">Scegli lo Chef</strong><hr>
+		
+		<div class="chef-container" th:each="chef : ${chefList}">
+			<ul>
+				<li>
+					<span th:text="${chef.nome} + ' ' + ${chef.cognome}">Chef</span>
+					<a th:href="@{'/admin' + '/' + ${chef.id} + '/buffetForm'}">Selziona</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>

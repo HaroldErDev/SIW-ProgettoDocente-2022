@@ -2,6 +2,7 @@ package it.uniroma3.siw.spring.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,7 @@ public class Chef {
 	@NotBlank
 	private String nazionalita;
 	
-	@OneToMany(mappedBy = "chef")
+	@OneToMany(mappedBy = "chef", cascade = {CascadeType.REMOVE})
 	private List<Buffet> buffet;
 	
 	public Long getId() {
@@ -70,4 +71,9 @@ public class Chef {
 	public void setBuffet(List<Buffet> buffet) {
 		this.buffet = buffet;
 	}
+	
+	public void addBuffet(Buffet buffet) {
+		this.buffet.add(buffet);
+	}
+	
 }

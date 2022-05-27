@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href="@{/css/dataUserInsert.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Registrazione</title>
+</head>
+<body>
+	<nav th:replace="fragments/base.html :: navigation(title='Registrazione riuscita')"></nav>
+	
+	<section>
+		<div class="insertion-box">
+			<div class="register-successful"><strong>Registrazione completata con successo!</strong></div><br>
+			<div class="click-here">Clicca <a th:href="@{/login}">qui</a> per accedere al tuo account.</div>
+		</div>
+	</section>
+	
+    <footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

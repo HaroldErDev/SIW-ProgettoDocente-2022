@@ -28,7 +28,7 @@ public class ChefController {
 	
 	@GetMapping("/chef")
 	public String getAllChef(Model model) {
-		List<Chef> chefList = chefService.findAll();
+		List<Chef> chefList = chefService.findAllChef();
 		model.addAttribute("chefList", chefList);
 		return "chef.html";
 	}
@@ -61,7 +61,7 @@ public class ChefController {
 	
 	@GetMapping("/admin/deleteChefForm")
 	public String deleteChef(Model model) {
-		List<Chef> chefList = this.chefService.findAll();
+		List<Chef> chefList = this.chefService.findAllChef();
 		model.addAttribute("chefList", chefList);
 		return "admin/deleteChefForm.html";
 	}
@@ -71,6 +71,13 @@ public class ChefController {
 		Chef chef = this.chefService.findChefById(id);
 		this.chefService.deleteChef(chef);
 		return "admin/home.html";
+	}
+	
+	@GetMapping("/admin/chefSelection")
+	public String getAllChefAdmin(Model model) {
+		List<Chef> chefList = chefService.findAllChef();
+		model.addAttribute("chefList", chefList);
+		return "admin/chefSelection.html";
 	}
 	
 }

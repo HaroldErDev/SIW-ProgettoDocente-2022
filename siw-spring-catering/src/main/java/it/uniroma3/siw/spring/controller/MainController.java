@@ -5,7 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class GlobalController {
+public class MainController {
+	
+	@GetMapping("/index")
+	public String getPaginaIndex(Model model) {
+		return "index.html";
+	}
 	
 	@GetMapping("/informazioni")
 	public String getPaginaInformazioni(Model model) {

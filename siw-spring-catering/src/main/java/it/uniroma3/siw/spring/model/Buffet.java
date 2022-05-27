@@ -3,6 +3,7 @@ package it.uniroma3.siw.spring.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Buffet {
 	@ManyToOne
 	private Chef chef;
 	
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.REMOVE})
 	@JoinColumn(name = "buffet_id")
 	private List<Piatto> piatti;
 	

@@ -22,7 +22,7 @@ public class ChefService {
 		this.chefRepository.save(chef);
 	}
 	
-	public List<Chef> findAll() {
+	public List<Chef> findAllChef() {
 		List<Chef> chef = new ArrayList<>();
 		
 		for(Chef c: chefRepository.findAll()) {
