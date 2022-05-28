@@ -18,6 +18,8 @@ public class Ingrediente {
 	private String nome;
 	
 	private String descrizione;
+	
+	@NotBlank
 	private String origine;
 	
 	public Long getId() {

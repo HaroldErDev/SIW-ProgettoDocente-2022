@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/buffetSelection.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Operazioni</title>
+</head>
+<body>
+	<section>
+		<strong class="titolo">Scegli il Buffet</strong><hr>
+		
+		<div class="buffet-container" th:each="buffet : ${buffetList}">
+			<ul>
+				<li>
+					<span th:text="${buffet.nome}">Buffet</span>
+					<a th:href="@{'/admin' + '/' + ${buffet.id} + '/piattoForm'}">Selziona</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>

@@ -2,16 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/buffetForm.css}" rel="stylesheet">
+	<link th:href="@{/css/piattoForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Aggiungi Buffet</title>
+	<title>Aggiungi Piatto</title>
 </head>
 <body>
 	<section>
-		<strong class="titolo">Aggiungi Buffet</strong><hr>
+		<strong class="titolo">Aggiungi Piatto</strong><hr>
 		
-		<!-- ' + '/' + ${chefId} + ' -->
-		<form th:action="@{'/admin' + '/' + ${chefId} + '/buffet'}" method="POST" th:object="${buffet}">
+		<form th:action="@{'/admin' + '/' + ${buffetId} + '/piatto'}" method="POST" th:object="${piatto}">
 			<div th:if="${#fields.hasGlobalErrors()}">
 				<span class="error" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>
 			</div>

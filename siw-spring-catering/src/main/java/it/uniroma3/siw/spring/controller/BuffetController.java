@@ -52,7 +52,7 @@ public class BuffetController {
 	}
 	
 	@PostMapping("/admin/{chefId}/buffet")
-	public String addBuffet(@Valid @ModelAttribute Buffet buffet, @PathVariable("chefId") Long chefId, BindingResult bindingResult, Model model) {
+	public String addBuffet(@Valid @ModelAttribute("buffet") Buffet buffet, @PathVariable("chefId") Long chefId, BindingResult bindingResult, Model model) {
 		this.buffetValidator.validate(buffet, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
@@ -71,11 +71,18 @@ public class BuffetController {
 		return "admin/deleteBuffetForm.html";
 	}
 	
-	@PostMapping("/admin/deleteBuffet/{buffetId}")
-	public String deleteBuffet(@PathVariable("buffetId") Long buffetId, Model model) {
-		Buffet buffet = this.buffetService.findBuffetById(buffetId);
+	@PostMapping("/admin/deleteBuffet/{id}")
+	public String deleteBuffet(@PathVariable("buffetId") Long id, Model model) {
+		Buffet buffet = this.buffetService.findBuffetById(id);
 		this.buffetService.deleteBuffet(buffet);
 		return "admin/home.html";
+	}
+	
+	@GetMapping("/admin/buffetSelection")
+	public String getAllBuffetAdmin(Model model) {
+		List<Buffet> buffetList = this.buffetService.findAllBuffet();
+		model.addAttribute("buffetList", buffetList);
+		return "admin/buffetSelection.html";
 	}
 	
 }

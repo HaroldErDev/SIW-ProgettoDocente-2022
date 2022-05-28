@@ -77,4 +77,9 @@ public class Buffet {
 	public void setPiatti(List<Piatto> piatti) {
 		this.piatti = piatti;
 	}
+	
+	public void addPiatto(Piatto piatto) {
+		this.piatti.add(piatto);
+	}
+	
 }
