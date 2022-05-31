@@ -7,10 +7,9 @@
 	<title>Operazioni</title>
 </head>
 <body>
+	<nav th:replace="fragments/base.html :: navigation(title='Operazioni Amministratore')"></nav>
+
 	<section>
-		<strong class="titolo">Operazioni</strong>
-		<a th:href="@{/index}">Torna alla pagina iniziale</a>
-		<hr>
 		<div class="operazioni">
 			<div><a th:href="@{/admin/chefForm}">Aggiungi Chef</a></div>
 			<div><a th:href="@{/admin/deleteChefForm}">Elimina Chef</a></div>
@@ -20,5 +19,7 @@
 			<div><a th:href="@{/admin/deletePiattoForm}">Elimina Piatto</a></div>
 		</div>
 	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

@@ -3,23 +3,10 @@ section {
 	font-family: monospace;
 	background-color: white;
 	border-radius: 5px;
-	border: 2px solid red;
+	border: 2px solid black;
 }
 
-.titolo {
-	font-size: 50px;
-	letter-spacing: 2px;
-	color: red;
-	margin-left: 20px;
-}
-
-hr {
-	height: 2px;
-	background-color: red;
-	border: none;
-}
-
-.buffet-container {
+.container {
 	font-size: 25px;
 }
 

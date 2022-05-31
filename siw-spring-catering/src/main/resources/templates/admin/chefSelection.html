@@ -2,15 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/chefSelection.css}" rel="stylesheet">
+	<link th:href="@{/css/adminSelection.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Operazioni</title>
+	<title>Scegli lo Chef</title>
 </head>
 <body>
+	<nav th:replace="fragments/base.html :: navigation(title='Scegli lo Chef')"></nav>
+
 	<section>
-		<strong class="titolo">Scegli lo Chef</strong><hr>
-		
-		<div class="chef-container" th:each="chef : ${chefList}">
+		<div class="container" th:each="chef : ${chefList}">
 			<ul>
 				<li>
 					<span th:text="${chef.nome} + ' ' + ${chef.cognome}">Chef</span>
@@ -19,5 +19,7 @@
 			</ul>
 		</div>
 	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

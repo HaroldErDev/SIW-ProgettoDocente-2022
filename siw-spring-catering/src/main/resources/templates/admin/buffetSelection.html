@@ -2,15 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/buffetSelection.css}" rel="stylesheet">
+	<link th:href="@{/css/adminSelection.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Operazioni</title>
+	<title>Scegli il Buffet</title>
 </head>
 <body>
+	<nav th:replace="fragments/base.html :: navigation(title='Scegli il Buffet')"></nav>
+
 	<section>
-		<strong class="titolo">Scegli il Buffet</strong><hr>
-		
-		<div class="buffet-container" th:each="buffet : ${buffetList}">
+		<div class="container" th:each="buffet : ${buffetList}">
 			<ul>
 				<li>
 					<span th:text="${buffet.nome}">Buffet</span>
@@ -19,5 +19,7 @@
 			</ul>
 		</div>
 	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

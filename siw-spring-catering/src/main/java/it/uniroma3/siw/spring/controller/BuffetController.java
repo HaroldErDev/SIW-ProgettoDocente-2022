@@ -72,7 +72,7 @@ public class BuffetController {
 	}
 	
 	@PostMapping("/admin/deleteBuffet/{id}")
-	public String deleteBuffet(@PathVariable("buffetId") Long id, Model model) {
+	public String deleteBuffet(@PathVariable("id") Long id, Model model) {
 		Buffet buffet = this.buffetService.findBuffetById(id);
 		this.buffetService.deleteBuffet(buffet);
 		return "admin/home.html";

@@ -2,20 +2,20 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/deleteBuffetForm.css}" rel="stylesheet">
+	<link th:href="@{/css/adminDeleteForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
 	<title>Elimina Buffet</title>
 </head>
 <body>
+	<nav th:replace="fragments/base.html :: navigation(title='Elimina Buffet')"></nav>
+
 	<section>
-		<strong class="titolo">Elimina Buffet</strong><hr>
-		
 		<div th:each="buffet : ${buffetList}">
 			<form th:action="@{'/admin/deleteBuffet' + '/' + ${buffet.id}}" method="POST">
 				<ul>
 					<li>
 						<span th:text="${buffet.nome}"></span>
-						<span><button>Rimuovi</button></span>
+						<span><button type="submit">Rimuovi</button></span>
 					</li>
 				</ul>
 			</form>
@@ -25,5 +25,7 @@
 			<a th:href="@{/admin/home}">Annulla</a>
 		</div>
 	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

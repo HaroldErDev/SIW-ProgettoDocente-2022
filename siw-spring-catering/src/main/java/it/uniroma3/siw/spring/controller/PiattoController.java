@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import it.uniroma3.siw.spring.model.Ingrediente;
 import it.uniroma3.siw.spring.model.Piatto;
 import it.uniroma3.siw.spring.service.BuffetService;
 import it.uniroma3.siw.spring.service.PiattoService;
@@ -38,7 +39,9 @@ public class PiattoController {
 		if(!bindingResult.hasErrors()) {
 			this.piattoService.save(piatto, this.buffetService.findBuffetById(buffetId));
 			model.addAttribute("piatto", piatto);
-			return "/admin/ingredienteForm.html";
+			model.addAttribute("ingrediente", new Ingrediente());
+			return "admin/ingredienteForm.html";
+			//return "admin/home.html";
 		}
 		
 		return "admin/piattoForm.html";

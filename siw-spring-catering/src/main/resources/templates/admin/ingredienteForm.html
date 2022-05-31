@@ -4,32 +4,37 @@
 	<meta charset="UTF-8" />
 	<link th:href="@{/css/adminForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Aggiungi Piatto</title>
+	<title>Aggiungi Ingrediente</title>
 </head>
 <body>
-	<nav th:replace="fragments/base.html :: navigation(title='Aggiungi Piatto')"></nav>
+	<nav th:replace="fragments/base.html :: navigation(title='Aggiungi Ingrediente')"></nav>
 
 	<section>
-		<form th:action="@{'/admin' + '/' + ${buffetId} + '/piatto'}" method="POST" th:object="${piatto}">
+		<form th:action="@{'/admin' + '/' + ${piatto.id} + '/ingrediente'}" method="POST" th:object="${ingrediente}">
 			<div th:if="${#fields.hasGlobalErrors()}">
 				<span class="error" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>
 			</div>
 			
 			<div class="form-box">
-				<span class="input-title">Nome: </span><input type="text" th:field="*{nome}" />
+				<span class="input-title">Nome: </span><input type="text" th:field="*{nome}" required />
 				<span class="error" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>
 			
 			<div class="form-box">
+				<span class="input-title">Origine: </span><input type="text" th:field="*{origine}" required />
+				<span class="error" th:if="${#fields.hasErrors('origine')}" th:errors="*{origine}"></span>
+			</div>
+			
+			<div class="form-box">
 				<div class="input-title">Descrizione: </div>
-				<textarea name="descrizione" rows="5" cols="50" th:field="*{descrizione}"></textarea>
+				<textarea name="descrizione" rows="5" cols="50" th:field="*{descrizione}" required></textarea>
 				<span class="error" th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
 			</div>
 			
 			<div class="confirm-block">
-				<button type="submit">Aggiungi Ingredienti</button>
+				<button type="submit">Aggiungi</button>
 				
-				<a th:href="@{/admin/home}">Annulla</a>
+				<a th:href="@{/admin/home}">Termina aggiunta ingredienti</a>
 			</div>
 		</form>
 	</section>

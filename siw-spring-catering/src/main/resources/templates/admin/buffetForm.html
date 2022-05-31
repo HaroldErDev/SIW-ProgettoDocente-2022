@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/buffetForm.css}" rel="stylesheet">
+	<link th:href="@{/css/adminForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
 	<title>Aggiungi Buffet</title>
 </head>
 <body>
+	<nav th:replace="fragments/base.html :: navigation(title='Aggiungi Buffet')"></nav>
+
 	<section>
-		<strong class="titolo">Aggiungi Buffet</strong><hr>
-		
 		<!-- ' + '/' + ${chefId} + ' -->
 		<form th:action="@{'/admin' + '/' + ${chefId} + '/buffet'}" method="POST" th:object="${buffet}">
 			<div th:if="${#fields.hasGlobalErrors()}">
@@ -34,5 +34,7 @@
 			</div>
 		</form>
 	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

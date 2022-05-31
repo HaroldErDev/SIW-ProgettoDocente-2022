@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link th:href="@{/css/deletePiattoForm.css}" rel="stylesheet">
+	<link th:href="@{/css/adminDeleteForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
 	<title>Elimina Piatto</title>
 </head>
 <body>
+	<nav th:replace="fragments/base.html :: navigation(title='Elimina Piatto')"></nav>
+
 	<section>
-		<strong class="titolo">Elimina Piatto</strong><hr>
-		
 		<div th:each="piatto : ${piatti}">
 			<form th:action="@{'/admin/deletePiatto' + '/' + ${piatto.id}}" method="POST">
 				<ul>
@@ -25,5 +25,7 @@
 			<a th:href="@{/admin/home}">Annulla</a>
 		</div>
 	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
 </body>
 </html>

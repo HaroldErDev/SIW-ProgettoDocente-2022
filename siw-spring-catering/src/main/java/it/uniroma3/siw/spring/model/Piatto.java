@@ -61,4 +61,9 @@ public class Piatto {
 	public void setIngredienti(List<Ingrediente> ingredienti) {
 		this.ingredienti = ingredienti;
 	}
+	
+	public void addIngrediente(Ingrediente ingrediente) {
+		this.ingredienti.add(ingrediente);
+	}
+	
 }
