@@ -1,9 +1,10 @@
 section {
 	margin: 75px 100px;
 	font-family: monospace;
-	background-color: white;
+	background-color: black;
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 5px solid grey;
+	color: white;
 }
 
 .input-title {
@@ -45,7 +46,7 @@ button {
 .confirm-block > a {
 	text-decoration: none;
 	font-size: 18px;
-	color: black;
+	color: white;
 }
 
 .confirm-block > a:hover {

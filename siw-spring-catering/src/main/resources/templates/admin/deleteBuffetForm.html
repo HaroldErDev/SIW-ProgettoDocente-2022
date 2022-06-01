@@ -14,7 +14,7 @@
 			<form th:action="@{'/admin/deleteBuffet' + '/' + ${buffet.id}}" method="POST">
 				<ul>
 					<li>
-						<span th:text="${buffet.nome}"></span>
+						<span class="description"><a th:href="@{'/buffet' + '/' + ${buffet.id}}" th:text="${buffet.nome}"></a></span>
 						<span><button type="submit">Rimuovi</button></span>
 					</li>
 				</ul>

@@ -1,9 +1,9 @@
 section {
 	margin: 75px 100px;
 	font-family: monospace;
-	background-color: white;
+	background-color: black;
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 5px solid grey;
 }
 
 .operazioni {
@@ -21,7 +21,7 @@ section {
 	padding: 15px;
 	font-size: 20px;
 	color: white;
-	border: 1px solid black;
+	border: 1px solid rgb(0, 128, 255);
 	font-family: monospace;
 }
 

@@ -35,7 +35,7 @@ public class PiattoController {
 	}
 	
 	@PostMapping("/admin/{buffetId}/piatto")
-	public String addPiatto(@Valid @ModelAttribute("piatto") Piatto piatto, @PathVariable("buffetId") Long buffetId, BindingResult bindingResult, Model model) {
+	public String addPiatto(@Valid @ModelAttribute("piatto") Piatto piatto, BindingResult bindingResult, @PathVariable("buffetId") Long buffetId, Model model) {
 		if(!bindingResult.hasErrors()) {
 			this.piattoService.save(piatto, this.buffetService.findBuffetById(buffetId));
 			model.addAttribute("piatto", piatto);

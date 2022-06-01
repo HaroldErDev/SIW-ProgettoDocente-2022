@@ -1,13 +1,19 @@
 section {
 	margin: 75px 100px;
 	font-family: monospace;
-	background-color: white;
+	background-color: black;
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 5px solid grey;
+	color: white;
 }
 
 form {
 	font-size: 20px;
+}
+
+.description a {
+	color: white;
+	text-decoration: none;
 }
 
 button {
@@ -22,7 +28,7 @@ button {
 .annulla a {
 	font-size: 18px;
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 .annulla a:hover {

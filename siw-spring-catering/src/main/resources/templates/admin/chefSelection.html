@@ -14,7 +14,7 @@
 			<ul>
 				<li>
 					<span th:text="${chef.nome} + ' ' + ${chef.cognome}">Chef</span>
-					<a th:href="@{'/admin' + '/' + ${chef.id} + '/buffetForm'}">Selziona</a>
+					<a class="selection" th:href="@{'/admin' + '/' + ${chef.id} + '/buffetForm'}">Selziona</a>
 				</li>
 			</ul>
 		</div>

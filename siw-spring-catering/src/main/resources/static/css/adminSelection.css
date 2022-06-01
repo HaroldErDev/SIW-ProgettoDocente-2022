@@ -1,20 +1,21 @@
 section {
 	margin: 75px 100px;
 	font-family: monospace;
-	background-color: white;
+	background-color: black;
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 5px solid grey;
+	color: white;
 }
 
 .container {
-	font-size: 25px;
+	font-size: 20px;
 }
 
 span {
 	font-family: monospace;
 }
 
-a {
+.selection {
 	font-family: monospace;
 	text-decoration: none;
 	color: white;
@@ -24,6 +25,6 @@ a {
 	border: 1px solid black;
 }
 
-a:hover {
+.selection:hover {
 	background-color: #0080ff;
 }

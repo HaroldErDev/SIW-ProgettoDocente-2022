@@ -32,10 +32,10 @@ public class IngredienteController {
 	}
 	
 	@PostMapping("/admin/{piattoId}/ingrediente")
-	public String addIngrediente(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, @PathVariable("piattoId") Long piattoId, BindingResult bindingResult, Model model) {
+	public String addIngrediente(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("piattoId") Long piattoId, Model model) {
 		if(!bindingResult.hasErrors()) {
 			this.ingredienteService.save(ingrediente, this.piattoService.findPiattoById(piattoId));
-			//model.addAttribute("ingrediente", ingrediente);
+			model.addAttribute("ingrediente", new Ingrediente());
 		}
 		
 		model.addAttribute("piatto", this.piattoService.findPiattoById(piattoId));

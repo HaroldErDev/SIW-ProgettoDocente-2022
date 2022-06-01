@@ -52,7 +52,7 @@ public class BuffetController {
 	}
 	
 	@PostMapping("/admin/{chefId}/buffet")
-	public String addBuffet(@Valid @ModelAttribute("buffet") Buffet buffet, @PathVariable("chefId") Long chefId, BindingResult bindingResult, Model model) {
+	public String addBuffet(@Valid @ModelAttribute("buffet") Buffet buffet, BindingResult bindingResult, @PathVariable("chefId") Long chefId, Model model) {
 		this.buffetValidator.validate(buffet, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
