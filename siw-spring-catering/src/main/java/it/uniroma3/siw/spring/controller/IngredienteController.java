@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import it.uniroma3.siw.spring.controller.validator.IngredienteValidator;
 import it.uniroma3.siw.spring.model.Ingrediente;
 import it.uniroma3.siw.spring.service.IngredienteService;
 import it.uniroma3.siw.spring.service.PiattoService;
@@ -20,6 +21,9 @@ public class IngredienteController {
 	
 	@Autowired
 	private IngredienteService ingredienteService;
+	
+	@Autowired
+	private IngredienteValidator ingredienteValidator;
 	
 	@Autowired
 	private PiattoService piattoService;
@@ -33,6 +37,8 @@ public class IngredienteController {
 	
 	@PostMapping("/admin/{piattoId}/ingrediente")
 	public String addIngrediente(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("piattoId") Long piattoId, Model model) {
+		this.ingredienteValidator.validate(ingrediente, bindingResult);
+		
 		if(!bindingResult.hasErrors()) {
 			this.ingredienteService.save(ingrediente, this.piattoService.findPiattoById(piattoId));
 			model.addAttribute("ingrediente", new Ingrediente());

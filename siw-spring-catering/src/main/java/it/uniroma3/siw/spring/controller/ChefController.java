@@ -59,11 +59,30 @@ public class ChefController {
 		return "admin/chefForm.html";
 	}
 	
-	@GetMapping("/admin/deleteChefForm")
-	public String deleteChef(Model model) {
+	@GetMapping("/admin/modifyChef")
+	public String modifyChef(Model model) {
 		List<Chef> chefList = this.chefService.findAllChef();
 		model.addAttribute("chefList", chefList);
-		return "admin/deleteChefForm.html";
+		return "admin/modifyChef.html";
+	}
+	
+	@GetMapping("/admin/modifyChefDataForm/{id}")
+	public String modifyChefData(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("chef", this.chefService.findChefById(id));
+		return "admin/modifyChefDataForm.html";
+	}
+	
+	@PostMapping("/admin/modifyChefData/{id}")
+	public String modifyChefData(@Valid @ModelAttribute("chef") Chef chef, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+		this.chefValidator.validate(chef, bindingResult);
+		
+		if(!bindingResult.hasErrors()) {
+			this.chefService.save(chef);
+			model.addAttribute("chef", chef);
+			return "admin/home.html";
+		}
+		
+		return "admin/modifyChefDataForm.html";
 	}
 	
 	@PostMapping("/admin/deleteChef/{id}")

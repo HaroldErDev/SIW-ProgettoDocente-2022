@@ -15,10 +15,15 @@
 				<ul>
 					<li>
 						<span class="description"><a th:href="@{'/buffet' + '/' + ${buffet.id}}" th:text="${buffet.nome}"></a></span>
-						<span><button type="submit">Rimuovi</button></span>
+						
+						<div class="operations">
+							<span><button type="submit">Rimuovi</button></span>
+						</div>
 					</li>
 				</ul>
 			</form>
+			
+			<hr color="grey">
 		</div>
 		
 		<div class="annulla">

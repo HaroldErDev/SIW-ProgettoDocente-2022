@@ -22,9 +22,10 @@ span {
 	padding: 5px;
 	margin-left: 10px;
 	background-color: blue;
-	border: 1px solid black;
+	border: 2px solid #004080;
 }
 
 .selection:hover {
-	background-color: #0080ff;
+	background-color: #0000d5;
+	color: #dfdfdf;
 }

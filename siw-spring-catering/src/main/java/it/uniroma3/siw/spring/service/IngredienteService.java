@@ -25,4 +25,8 @@ public class IngredienteService {
 		this.ingredienteRepository.save(ingrediente);
 	}
 	
+	public boolean alreadyExists(Ingrediente ingrediente) {
+		return this.ingredienteRepository.existsByNomeAndOrigine(ingrediente.getNome(), ingrediente.getOrigine());
+	}
+	
 }

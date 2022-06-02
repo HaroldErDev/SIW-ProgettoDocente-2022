@@ -2,6 +2,7 @@ package it.uniroma3.siw.spring.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -41,6 +42,11 @@ public class PiattoService {
 	@Transactional
 	public void deletePiatto(Piatto piatto) {
 		this.piattoRepository.delete(piatto);
+	}
+	
+	public Piatto getPiattoByNome(String nome) {
+		Optional<Piatto> piatto = this.piattoRepository.findByNome(nome);
+		return piatto.orElse(null);
 	}
 	
 }

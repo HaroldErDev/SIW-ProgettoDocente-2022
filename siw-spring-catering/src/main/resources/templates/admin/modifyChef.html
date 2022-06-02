@@ -4,10 +4,10 @@
 	<meta charset="UTF-8" />
 	<link th:href="@{/css/adminDeleteForm.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Elimina Chef</title>
+	<title>Modifica Chef</title>
 </head>
 <body>
-	<nav th:replace="fragments/base.html :: navigation(title='Elimina Chef')"></nav>
+	<nav th:replace="fragments/base.html :: navigation(title='Modifica Chef')"></nav>
 
 	<section>
 		<div th:each="chef : ${chefList}">
@@ -15,10 +15,17 @@
 				<ul>
 					<li>
 						<span class="description"><a th:href="@{'/chef' + '/' + ${chef.id}}" th:text="${chef.nome} + ' ' + ${chef.cognome}"></a></span>
-						<span><button type="submit">Rimuovi</button></span>
+						
+						<div class="operations">
+							<span><a class="modify-data" th:href="@{'/admin/modifyChefDataForm' + '/' + ${chef.id}}">Modifica Dati</a></span>
+						
+							<span><button type="submit">Rimuovi</button></span>
+						</div>
 					</li>
 				</ul>
 			</form>
+			
+			<hr color="grey">
 		</div>
 		
 		<div class="annulla">

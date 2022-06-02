@@ -39,16 +39,37 @@ input {
 }
 
 button {
-	font-size: 18px;
+	padding: 5px;
 	font-family: monospace;
+    font-size: 20px;
+    color: white;
+    border: 2px solid #004080;
+    background-color: blue;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.confirm-block > a {
+button:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.15);
+}
+
+.annulla {
+	margin-top: 50px;
+}
+
+.confirm-block a {
 	text-decoration: none;
 	font-size: 18px;
-	color: white;
+	color: red;
 }
 
-.confirm-block > a:hover {
+.confirm-block a:hover {
 	text-decoration: underline;
 }
