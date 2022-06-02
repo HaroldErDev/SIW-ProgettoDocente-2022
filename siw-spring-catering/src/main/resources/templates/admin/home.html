@@ -10,13 +10,42 @@
 	<nav th:replace="fragments/base.html :: navigation(title='Operazioni Amministratore')"></nav>
 
 	<section>
-		<div class="operazioni">
-			<div><a th:href="@{/admin/chefForm}">Aggiungi Chef</a></div>
-			<div><a th:href="@{/admin/modifyChef}">Modifica Chef</a></div>
-			<div><a th:href="@{/admin/chefSelection}">Aggiungi Buffet</a></div>
-			<div><a th:href="@{/admin/deleteBuffetForm}">Rimuovi Buffet</a></div>
-			<div><a th:href="@{/admin/buffetSelection}">Aggiungi Piatto</a></div>
-			<div><a th:href="@{/admin/deletePiattoForm}">Rimuovi Piatto</a></div>
+		<div id="operazioni">
+			<div class="card">
+				<div class="header"><strong>Chef</strong></div>
+				
+				<div class="buttons">
+					<div><a th:href="@{/admin/chefForm}">Aggiungi Chef</a></div>
+					<div><a th:href="@{/admin/modifyChef}">Modifica Chef</a></div>
+				</div>
+			</div>
+			
+			<div class="card">
+				<div class="header"><strong>Buffet</strong></div>
+				
+				<div class="buttons">
+					<div><a th:href="@{/admin/chefSelection}">Aggiungi Buffet</a></div>
+					<div><a th:href="@{/admin/deleteBuffetForm}">Modifica Buffet</a></div>
+				</div>
+			</div>
+			
+			<div class="card">
+				<div class="header"><strong>Piatto</strong></div>
+				
+				<div class="buttons">
+					<div><a th:href="@{/admin/buffetSelection}">Aggiungi Piatto</a></div>
+					<div><a th:href="@{/admin/deletePiattoForm}">Modifica Piatto</a></div>
+				</div>
+			</div>
+			
+			<div class="card">
+				<div class="header"><strong>Ingrediente</strong></div>
+				
+				<div class="buttons">
+					<div><a th:href="@{/admin/home}">Aggiungi Ingrediente</a></div>
+					<div><a th:href="@{/admin/home}">Modifica Ingrediente</a></div>
+				</div>
+			</div>
 		</div>
 	</section>
 	

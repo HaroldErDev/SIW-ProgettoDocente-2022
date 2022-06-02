@@ -6,16 +6,18 @@ section {
 	border: 5px solid grey;
 }
 
-.operazioni {
-	margin: 50px 20px;
+#operazioni {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 50px;
 }
 
-.operazioni > div {
-	margin-top: 40px;
+#operazioni > div {
 	font-size: 30px;
 }
 
-.operazioni > div a {
+#operazioni > div a {
 	background-color: blue;
 	text-decoration: none;
 	padding: 15px;
@@ -25,7 +27,34 @@ section {
 	font-family: monospace;
 }
 
-.operazioni > div a:hover {
+#operazioni > div a:hover {
 	background-color: #0000d5;
 	color: #dfdfdf;
+}
+
+.card {
+	text-align: center;
+}
+
+.header {
+	background-color: white;
+	height: 50px;
+	padding-top: 12px;
+	border: 5px solid #ca0000;
+}
+
+.header strong {
+	font-style: italic;
+}
+
+.buttons {
+	background-color: white;
+	border: 5px solid #ca0000;
+	border-top: none;
+	padding-top: 7px;
+	padding-bottom: 13px;
+}
+
+.buttons > div {
+	padding: 20px 20px;
 }
