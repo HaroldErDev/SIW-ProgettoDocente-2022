@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/adminSelection.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Scegli il Piatto</title>
+</head>
+<body>
+	<nav th:replace="fragments/base.html :: navigation(title='Scegli il Piatto')"></nav>
+
+	<section>
+		<div class="container" th:each="piatto : ${piatti}">
+			<ul>
+				<li>
+					<span th:text="${piatto.nome}">Buffet</span>
+					<a class="selection" th:href="@{'/admin' + '/' + ${piatto.id} + '/ingredienteForm'}">Selziona</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

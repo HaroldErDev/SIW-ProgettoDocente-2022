@@ -1,5 +1,7 @@
 package it.uniroma3.siw.spring.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,13 @@ public class IngredienteController {
 		return "ingrediente.html";
 	}
 	
+	@GetMapping("/admin/{piattoId}/ingredienteForm")
+	public String getNewIngrediente(@PathVariable("piattoId") Long piattoId, Model model) {
+		model.addAttribute("ingrediente", new Ingrediente());
+		model.addAttribute("piatto", this.piattoService.findPiattoById(piattoId));
+		return "admin/ingredienteForm.html";
+	}
+	
 	@PostMapping("/admin/{piattoId}/ingrediente")
 	public String addIngrediente(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("piattoId") Long piattoId, Model model) {
 		this.ingredienteValidator.validate(ingrediente, bindingResult);
@@ -46,6 +55,39 @@ public class IngredienteController {
 		
 		model.addAttribute("piatto", this.piattoService.findPiattoById(piattoId));
 		return "admin/ingredienteForm.html";
+	}
+	
+	@GetMapping("/admin/modifyIngrediente")
+	public String modifyIngrediente(Model model) {
+		List<Ingrediente> ingredienti = this.ingredienteService.findAllIngredienti();
+		model.addAttribute("ingredienti", ingredienti);
+		return "admin/modifyIngrediente.html";
+	}
+	
+	@PostMapping("/admin/deleteIngrediente/{id}")
+	public String deleteIngrediente(@PathVariable("id") Long id, Model model) {
+		Ingrediente ingrediente = this.ingredienteService.findIngredienteById(id);
+		this.ingredienteService.delete(ingrediente);
+		return "admin/home.html";
+	}
+	
+	@GetMapping("/admin/modifyIngredienteDataForm/{id}")
+	public String modifyChefData(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("ingrediente", this.ingredienteService.findIngredienteById(id));
+		return "admin/modifyIngredienteDataForm.html";
+	}
+	
+	@PostMapping("/admin/modifyIngredienteData/{id}")
+	public String modifyChefData(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+		//this.ingredienteValidator.validate(ingrediente, bindingResult);
+		
+		if(!bindingResult.hasErrors()) {
+			this.ingredienteService.save(ingrediente);
+			model.addAttribute("ingrediente", ingrediente);
+			return "admin/home.html";
+		}
+		
+		return "admin/modifyIngredienteDataForm.html";
 	}
 	
 }

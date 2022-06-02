@@ -67,4 +67,11 @@ public class PiattoController {
 		return "/admin/home.html";
 	}
 	
+	@GetMapping("/admin/piattoSelection")
+	public String getAllPiattiAdmin(Model model) {
+		List<Piatto> piatti = this.piattoService.findAllPiatti();
+		model.addAttribute("piatti", piatti);
+		return "admin/piattoSelection.html";
+	}
+	
 }

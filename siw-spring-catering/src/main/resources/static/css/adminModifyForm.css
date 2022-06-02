@@ -16,6 +16,10 @@ form {
 	text-decoration: none;
 }
 
+.description a:hover {
+	color: lightgray;
+}
+
 .operations {
 	margin-top: 10px;
 }
