@@ -29,6 +29,8 @@ public class Chef {
 	@NotBlank
 	private String nazionalita;
 	
+	private String imageUrl;
+	
 	@OneToMany(mappedBy = "chef", cascade = {CascadeType.REMOVE})
 	private List<Buffet> buffet;
 	
@@ -74,6 +76,14 @@ public class Chef {
 	
 	public void addBuffet(Buffet buffet) {
 		this.buffet.add(buffet);
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	
 }

@@ -17,7 +17,7 @@
 		<div id="chef-container">
 			<div class="chef-item" th:each="chef : ${chefList}">
 				<div class="image">
-					<img th:src="@{${'/images/chef/' + chef.cognome + '.jpg'}}" />
+					<img th:src="${chef.imageUrl}" />
 				</div>
 				
 				<div class="desc">

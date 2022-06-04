@@ -13,7 +13,7 @@
 		<div id="chef-container">
 			<div class="chef-card">
 				<div class="header">
-					<img th:src="@{${'/images/chef/' + chef.cognome + '.jpg'}}" />
+					<img th:src="${chef.imageUrl}" />
 				</div>
 				
 				<div class="info">

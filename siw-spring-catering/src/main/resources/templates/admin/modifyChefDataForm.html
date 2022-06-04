@@ -30,6 +30,10 @@
 				<span class="error" th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
 			</div>
 			
+			<div class="form-box">
+				<span class="input-title">URL Immagine: </span><input type="text" th:value="*{imageUrl}" th:field="*{imageUrl}" />
+			</div>
+			
 			<div class="confirm-block">
 				<button type="submit">Conferma Modifiche</button>
 				
