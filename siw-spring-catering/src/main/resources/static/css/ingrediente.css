@@ -3,23 +3,30 @@ section {
 }
 
 #ingrediente-container {
+	background-color: black;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	height: auto;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 2px solid #b70000;
+	border-radius: 10px;
 }
 
 .nome {
-	font-family: monospace;
+	font-family: Lucida Handwriting;
 	font-size: 50px;
-	color: blue;
+	color: #b70000;
 	letter-spacing: 3px;
 	margin-bottom: 10px;
 }
 
 .descrizione {
-	font-family: helvetica;
+	font-family: cursive;
 	font-size: 30px;
+	margin: auto 100px;
 }
 
 .origine {

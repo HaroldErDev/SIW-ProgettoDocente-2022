@@ -11,31 +11,35 @@ section {
 #flex-container {
     display: flex;
     flex-direction: row;
-    height: 700px;
+    height: 750px;
     justify-content: space-between;
 }
 
 div.flex-item {
+	background-color: black;
 	width: 40%;
 	text-align: center;
+	color: white;
+	border-radius: 0 0 10px 10px;
+	border: 3px solid #b70000;
 }
 
 div.flex-item img {
 	width: 100%;
-	border: 1px solid blue;
+	border-bottom: 3px solid #b70000;
 }
 
 .title {
 	padding-top: 30px;
-	font-family: monospace;
+	font-family: Lucida Handwriting;
 	font-size: 50px;
 	letter-spacing: 5px;
-	color: grey;
+	color: #b70000;
 }
 
 .info {
 	padding-top: 10px;
-	font-family: helvetica;
+	font-family: cursive;
 	font-size: 20px;
 }
 
@@ -54,5 +58,6 @@ div.flex-item img {
 }
 
 .button a:hover {
-	background-color: #0080ff;
+	background-color: #0000d5;
+	color: #dfdfdf;
 }

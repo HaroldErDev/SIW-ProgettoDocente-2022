@@ -30,13 +30,13 @@ section {
 }
 
 .title {
-	font-family: monospace;
+	font-family: Lucida Handwriting;
 	font-size: 50px;
 	letter-spacing: 3px;
 	margin-top: 50px;
 	margin-bottom: 20px;
 	text-align: center;
-	color: grey;
+	color: #b70000;
 }
 
 .buffet {
@@ -61,5 +61,6 @@ section {
 }
 
 .button a:hover {
-	background-color: #0080ff;
+	background-color: #0000d5;
+	color: #dfdfdf;
 }

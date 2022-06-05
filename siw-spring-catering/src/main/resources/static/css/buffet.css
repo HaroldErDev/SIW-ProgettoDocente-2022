@@ -39,5 +39,6 @@ section {
 }
 
 .buffet-item a:hover {
-	background-color: #0080ff;
+	background-color: #0000d5;
+	color: #dfdfdf;
 }
