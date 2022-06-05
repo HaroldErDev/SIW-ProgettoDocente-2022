@@ -26,23 +26,25 @@
 		</div>
 		
 		<div id="piatti-container">
-			<div class="title">
+			<div class="title-piatti">
 				<strong>Piatti</strong>
 			</div>
 			
-			<div class="piatto-desc" th:each="piatto : ${buffet.piatti}">
-				<div class="piatto">
-					<span class="nome" th:text="${piatto.nome}"></span><br>
+			<div class="container">
+				<div class="piatto-desc" th:each="piatto : ${buffet.piatti}">
+					<div class="piatto">
+						<strong class="nome" th:text="${piatto.nome}"></strong><br>
+						
+						<strong class="ingredienti-title">Ingredienti: </strong>
+						<span class="ingredienti" th:each="ingrediente : ${piatto.ingredienti}">
+							<a th:href="@{'/ingrediente' + '/' + ${ingrediente.id}}" th:text="${ingrediente.nome}"></a>,
+						</span>
+						
+						<div class="desc" th:text="${piatto.descrizione}"></div>
+					</div>
 					
-					<strong class="ingredienti-title">Ingredienti: </strong>
-					<span class="ingredienti" th:each="ingrediente : ${piatto.ingredienti}">
-						<a th:href="@{'/ingrediente' + '/' + ${ingrediente.id}}" th:text="${ingrediente.nome}"></a>,
-					</span>
-					
-					<div class="desc" th:text="${piatto.descrizione}"></div>
+					<hr color="#b70000">
 				</div>
-				
-				<hr>
 			</div>
 		</div>
 	</section>

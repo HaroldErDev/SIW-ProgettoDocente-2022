@@ -6,20 +6,21 @@ section {
 	display: flex;
 	flex-direction: column;
 	height: auto;
-	padding-bottom: 50px;
+	padding-bottom: 100px;
 	text-align: center;
 }
 
 div.title {
-	font-family: monospace;
+	font-family: Lucida Handwriting;
 	font-size: 50px;
 	color: blue;
 	letter-spacing: 3px;
 	padding-bottom: 10px;
+	text-align: center;
 }
 
 div.buffet-desc {
-	font-family: Helvetica;
+	font-family: cursive;
 	font-size: 30px;
 	padding-bottom: 10px;
 }
@@ -31,47 +32,70 @@ div.chef {
 }
 
 div.chef a {
+	font-family: Garamond;
 	font-style: normal;
 	font-weight: bold;
 	color: black;
+}
+
+div.chef a:hover {
+	color: #4b4b4b;
 }
 
 #piatti-container {
 	display: flex;
 	flex-direction: column;
 	height: auto;
+	margin: auto 300px;
+}
+
+div.title-piatti {
+	background-color: #b70000;
+	font-family: Lucida Handwriting;
+	font-size: 50px;
+	color: black;
+	letter-spacing: 3px;
 	text-align: center;
+	border: 2px solid black;
+	border-radius: 10px 10px 0 0;
+}
+
+.container {
+	background-color: black;
+	border: 2px solid #b70000;
 }
 
 .piatto-desc {
-	margin-left: 300px;
-	margin-right: 300px;
+	margin: 50px 50px;
+	color: white;
 }
 
 .piatto .nome {
-	font-family: monospace;
+	font-family: papyrus;
 	font-size: 30px;
+	color: #b70000;
 }
 
 .piatto .desc {
-	font-family: monospace;
-	font-size: 15px;
+	font-family: cursive;
+	font-size: 17px;
 	margin-top: 20px;
 }
 
 .piatto .ingredienti-title {
-	font-style: Helvetica;
+	font-family: Garamond;
 	font-size: 20px;
 }
 
 .piatto .ingredienti {
+	font-family: Garamond;
 	font-style: italic;
 	font-size: 20px;
 }
 
 .piatto .ingredienti a {
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 .piatto .ingredienti a:hover {
