@@ -40,7 +40,7 @@ section {
 	background-color: white;
 	height: 50px;
 	padding-top: 12px;
-	border: 5px solid #ca0000;
+	border: 3px solid #ca0000;
 }
 
 .header strong {
@@ -49,7 +49,7 @@ section {
 
 .buttons {
 	background-color: white;
-	border: 5px solid #ca0000;
+	border: 3px solid #ca0000;
 	border-top: none;
 	padding-top: 7px;
 	padding-bottom: 13px;
