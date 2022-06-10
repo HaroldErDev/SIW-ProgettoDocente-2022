@@ -72,13 +72,13 @@ public class IngredienteController {
 	}
 	
 	@GetMapping("/admin/modifyIngredienteDataForm/{id}")
-	public String modifyChefData(@PathVariable("id") Long id, Model model) {
+	public String modifyIngredienteData(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("ingrediente", this.ingredienteService.findIngredienteById(id));
 		return "admin/modifyIngredienteDataForm.html";
 	}
 	
 	@PostMapping("/admin/modifyIngredienteData/{id}")
-	public String modifyChefData(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+	public String modifyIngredienteData(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
 		//this.ingredienteValidator.validate(ingrediente, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {

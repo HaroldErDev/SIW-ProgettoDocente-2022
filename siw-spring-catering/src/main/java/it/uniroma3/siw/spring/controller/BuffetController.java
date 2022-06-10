@@ -45,7 +45,7 @@ public class BuffetController {
 	}
 	
 	@GetMapping("/admin/{chefId}/buffetForm")
-	public String getBuffetAndChef(@PathVariable("chefId") Long chefId, Model model) {
+	public String getNewBuffetAndChef(@PathVariable("chefId") Long chefId, Model model) {
 		model.addAttribute("buffet", new Buffet());
 		model.addAttribute("chefId", chefId);
 		return "admin/buffetForm.html";

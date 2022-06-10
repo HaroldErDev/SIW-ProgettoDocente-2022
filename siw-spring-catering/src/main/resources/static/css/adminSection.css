@@ -1,8 +1,16 @@
-section {
+.section-operations {
 	margin: 75px 100px;
 	font-family: monospace;
 	background-color: black;
 	border-radius: 5px;
 	border: 5px solid grey;
 	color: white;
+}
+
+.section-home {
+	margin: 75px 100px;
+	font-family: monospace;
+	background-color: black;
+	border-radius: 5px;
+	border: 5px solid grey;
 }

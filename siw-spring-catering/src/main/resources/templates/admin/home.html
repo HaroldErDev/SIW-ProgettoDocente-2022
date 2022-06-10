@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8" />
 	<link th:href="@{/css/home.css}" rel="stylesheet">
+	<link th:href="@{/css/adminSection.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
 	<title>Operazioni</title>
 </head>
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Operazioni Amministratore')"></nav>
 
-	<section>
+	<section class="section-home">
 		<div id="operazioni">
 			<div class="card">
 				<div class="header"><strong>Chef</strong></div>

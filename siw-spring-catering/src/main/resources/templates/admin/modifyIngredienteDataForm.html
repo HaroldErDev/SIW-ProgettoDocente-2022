@@ -10,7 +10,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Modifica Dati Ingrediente')"></nav>
 
-	<section>
+	<section class="section-operations">
 		<form th:action="@{'/admin/modifyIngredienteData' + '/' + ${ingrediente.id}}" method="POST" th:object="${ingrediente}">
 			<div th:if="${#fields.hasGlobalErrors()}">
 				<span class="error" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>

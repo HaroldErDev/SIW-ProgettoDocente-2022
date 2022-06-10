@@ -10,7 +10,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Aggiungi Chef')"></nav>
 
-	<section>
+	<section class="section-operations">
 		<form th:action="@{/admin/chef}" method="POST" th:object="${chef}">
 			<div th:if="${#fields.hasGlobalErrors()}">
 				<span class="error" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>

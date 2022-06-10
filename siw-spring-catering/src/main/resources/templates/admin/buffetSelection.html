@@ -10,7 +10,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Scegli il Buffet')"></nav>
 
-	<section>
+	<section class="section-operations">
 		<div class="container" th:each="buffet : ${buffetList}">
 			<ul>
 				<li>

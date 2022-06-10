@@ -10,7 +10,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Modifica Ingredinte')"></nav>
 
-	<section>
+	<section class="section-operations">
 		<div th:each="ingrediente : ${ingredienti}">
 			<form th:action="@{'/admin/deleteIngrediente' + '/' + ${ingrediente.id}}" method="POST">
 				<ul>

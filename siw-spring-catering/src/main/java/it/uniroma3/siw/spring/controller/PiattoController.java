@@ -32,7 +32,7 @@ public class PiattoController {
 	private BuffetService buffetService;
 	
 	@GetMapping("/admin/{buffetId}/piattoForm") 
-	public String getPiattoAndBuffet(@PathVariable("buffetId") Long buffetId, Model model) {
+	public String getNewPiattoAndBuffet(@PathVariable("buffetId") Long buffetId, Model model) {
 		model.addAttribute("piatto", new Piatto());
 		model.addAttribute("buffetId", buffetId);
 		return "admin/piattoForm.html";

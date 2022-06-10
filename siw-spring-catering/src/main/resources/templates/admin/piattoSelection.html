@@ -10,11 +10,11 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Scegli il Piatto')"></nav>
 
-	<section>
+	<section class="section-operations">
 		<div class="container" th:each="piatto : ${piatti}">
 			<ul>
 				<li>
-					<span th:text="${piatto.nome}">Buffet</span>
+					<span th:text="${piatto.nome}">Piatto</span>
 					<a class="selection" th:href="@{'/admin' + '/' + ${piatto.id} + '/ingredienteForm'}">Selziona</a>
 				</li>
 			</ul>
