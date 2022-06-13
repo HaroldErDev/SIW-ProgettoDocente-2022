@@ -15,7 +15,7 @@
 	
 	<section>
 		<div id="chef-container">
-			<div class="chef-item" th:each="chef : ${chefList}">
+			<div class="chef-card" th:each="chef : ${chefList}">
 				<div class="image">
 					<img th:src="${chef.imageUrl}" />
 				</div>

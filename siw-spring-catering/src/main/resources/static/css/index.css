@@ -1,9 +1,3 @@
-header img {
-	width: 99.9%;
-	height: 600px;
-	border: 1px solid black;
-}
-
 section {
 	margin: 75px 100px;
 }
@@ -20,13 +14,19 @@ div.flex-item {
 	width: 40%;
 	text-align: center;
 	color: white;
-	border-radius: 0 0 10px 10px;
-	border: 3px solid #b70000;
+	border: 3px solid black;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: linear 0.3s;
+}
+
+div.flex-item:hover {
+	transform: scale(1.05);
+	transition: linear 0.3s;
 }
 
 div.flex-item img {
 	width: 100%;
-	border-bottom: 3px solid #b70000;
+	border-bottom: 3px solid black;
 }
 
 .title {
@@ -55,9 +55,11 @@ div.flex-item img {
 	color: white;
 	border-radius: 50px;
 	font-family: monospace;
+	transition: ease-in 0.3s;
 }
 
 .button a:hover {
 	background-color: #0000d5;
 	color: #dfdfdf;
+	transition: ease-out 0.3s;
 }
