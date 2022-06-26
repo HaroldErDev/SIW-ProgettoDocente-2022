@@ -20,7 +20,14 @@
 				
 				<span sec:authorize="!isAuthenticated()"><a th:href="@{/login}">ACCEDI</a></span>
 				
-				<span sec:authorize="isAuthenticated()"><a th:href="@{/logout}">ESCI</a></span>
+				<div class="drop_down_menu">
+					<span sec:authorize="isAuthenticated()"><a th:href="@{/}" th:text="${#authentication.getPrincipal().getUsername().toUpperCase()}">UTENTE</a></span>
+					<div class="dropdown-content">
+						<a th:href="@{/logout}">ESCI</a>
+					</div>
+				</div>
+				
+				<!-- <span sec:authorize="isAuthenticated()"><a th:href="@{/logout}">ESCI</a></span -->
 			</div>
 		</div>
 	</nav>

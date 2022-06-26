@@ -15,7 +15,7 @@
 			<form th:action="@{'/admin/deleteIngrediente' + '/' + ${ingrediente.id}}" method="POST">
 				<ul>
 					<li>
-						<span class="description" th:text="${ingrediente.nome}"></span>
+						<span class="description"><a th:href="@{'/ingrediente' + '/' + ${ingrediente.id}}" th:text="${ingrediente.nome}"></a></span>
 						
 						<div class="operations">
 							<span><a class="modify-data" th:href="@{'/admin/modifyIngredienteDataForm' + '/' + ${ingrediente.id}}">Modifica Dati</a></span>
