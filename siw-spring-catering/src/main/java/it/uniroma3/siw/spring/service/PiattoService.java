@@ -20,6 +20,11 @@ public class PiattoService {
 	private PiattoRepository piattoRepository;
 	
 	@Transactional
+	public void save(Piatto piatto) {
+		this.piattoRepository.save(piatto);
+	}
+	
+	@Transactional
 	public void save(Piatto piatto, Buffet buffet) {
 		buffet.addPiatto(piatto);
 		this.piattoRepository.save(piatto);

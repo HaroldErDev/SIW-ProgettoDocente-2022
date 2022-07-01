@@ -53,11 +53,11 @@ public class PiattoController {
 		return "admin/piattoForm.html";
 	}
 	
-	@GetMapping("/admin/deletePiattoForm")
+	@GetMapping("/admin/modifyPiatto")
 	public String deletePiatto(Model model) {
 		List<Piatto> piatti = this.piattoService.findAllPiatti();
 		model.addAttribute("piatti", piatti);
-		return "/admin/deletePiattoForm.html";
+		return "/admin/modifyPiatto.html";
 	}
 	
 	@PostMapping("/admin/deletePiatto/{id}")
@@ -72,6 +72,29 @@ public class PiattoController {
 		List<Piatto> piatti = this.piattoService.findAllPiatti();
 		model.addAttribute("piatti", piatti);
 		return "admin/piattoSelection.html";
+	}
+	
+	
+	@GetMapping("/admin/modifyPiattoDataForm/{id}")
+	public String modifyPiattoData(@PathVariable("id") Long id, Model model) {
+		Piatto piatto = this.piattoService.findPiattoById(id);
+		model.addAttribute("piatto", piatto);
+		return "/admin/modifyPiattoDataForm.html";
+	}
+	
+	@PostMapping("/admin/modifyPiattoData/{id}")
+	public String modifyPiattoData(@Valid @ModelAttribute("editedPiatto") Piatto editedPiatto, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+		//this.buffetValidator.validate(buffet, bindingResult);
+		
+		if(!bindingResult.hasErrors()) {
+			Piatto piatto = this.piattoService.findPiattoById(id);
+			piatto.setNome(editedPiatto.getNome());
+			piatto.setDescrizione(editedPiatto.getDescrizione());
+			this.piattoService.save(piatto);
+			return "admin/home.html";
+		}
+		
+		return "admin/modifyPiattoDataForm.html";
 	}
 	
 }

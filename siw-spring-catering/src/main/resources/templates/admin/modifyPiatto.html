@@ -18,6 +18,8 @@
 						<span th:text="${piatto.nome}"></span>
 						
 						<div class="operations">
+							<span><a class="modify-data" th:href="@{'/admin/modifyPiattoDataForm' + '/' + ${piatto.id}}">Modifica Dati</a></span>
+						
 							<span><button>Rimuovi</button></span>
 						</div>
 					</li>
