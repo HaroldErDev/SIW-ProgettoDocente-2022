@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/adminForm.css}" rel="stylesheet">
+	<link th:href="@{/css/adminSection.css}" rel="stylesheet">
+	<link th:replace="fragments/base.html :: style">
+	<title>Modifica Dati Buffet</title>
+</head>
+<body>
+	<nav th:replace="fragments/base.html :: navigation(title='Modifica Dati Buffet')"></nav>
+	
+	<section class="section-operations">
+		<form th:action="@{'/admin/modifyBuffetData' + '/' + ${buffet.id}}" method="POST" th:object="${buffet}">
+			<div th:if="${#fields.hasGlobalErrors()}">
+				<span class="error" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>
+			</div>
+			
+			<div class="form-box">
+				<span class="input-title">Nome: </span><input type="text" th:value="*{nome}" th:field="*{nome}" />
+				<span class="error" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+			</div>
+			
+			<div class="form-box">
+				<div class="input-title">Descrizione: </div>
+				<textarea name="descrizione" rows="5" cols="50" th:value="*{descrizione}" th:field="*{descrizione}"></textarea>
+				<span class="error" th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+			</div>
+			
+			<div class="confirm-block">
+				<button type="submit">Conferma Modifiche</button>
+				
+				<div class="annulla">
+					<a th:href="@{/admin/home}">Annulla</a>
+				</div>
+			</div>
+		</form>
+	</section>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

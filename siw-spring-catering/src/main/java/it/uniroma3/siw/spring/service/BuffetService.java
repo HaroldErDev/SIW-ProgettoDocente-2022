@@ -20,6 +20,11 @@ public class BuffetService {
 	private BuffetRepository buffetRepository;
 	
 	@Transactional
+	public void save(Buffet buffet) {
+		this.buffetRepository.save(buffet);
+	}
+	
+	@Transactional
 	public void save(Buffet buffet, Chef chef) {
 		buffet.setChef(chef);
 		chef.addBuffet(buffet);

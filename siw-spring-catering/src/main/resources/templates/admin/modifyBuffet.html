@@ -5,10 +5,10 @@
 	<link th:href="@{/css/adminModifyForm.css}" rel="stylesheet">
 	<link th:href="@{/css/adminSection.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Elimina Buffet</title>
+	<title>Modifica Buffet</title>
 </head>
 <body>
-	<nav th:replace="fragments/base.html :: navigation(title='Elimina Buffet')"></nav>
+	<nav th:replace="fragments/base.html :: navigation(title='Modifica Buffet')"></nav>
 
 	<section class="section-operations">
 		<div th:each="buffet : ${buffetList}">
@@ -18,6 +18,8 @@
 						<span class="description"><a th:href="@{'/buffet' + '/' + ${buffet.id}}" th:text="${buffet.nome}"></a></span>
 						
 						<div class="operations">
+							<span><a class="modify-data" th:href="@{'/admin/modifyBuffetDataForm' + '/' + ${buffet.id}}">Modifica Dati</a></span>
+						
 							<span><button type="submit">Rimuovi</button></span>
 						</div>
 					</li>

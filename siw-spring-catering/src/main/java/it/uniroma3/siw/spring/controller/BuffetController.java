@@ -64,11 +64,11 @@ public class BuffetController {
 		return "admin/buffetForm.html";
 	}
 	
-	@GetMapping("/admin/deleteBuffetForm")
+	@GetMapping("/admin/modifyBuffet")
 	public String deleteBuffet(Model model) {
 		List<Buffet> buffetList = this.buffetService.findAllBuffet();
 		model.addAttribute("buffetList", buffetList);
-		return "admin/deleteBuffetForm.html";
+		return "admin/modifyBuffet.html";
 	}
 	
 	@PostMapping("/admin/deleteBuffet/{id}")
@@ -83,6 +83,28 @@ public class BuffetController {
 		List<Buffet> buffetList = this.buffetService.findAllBuffet();
 		model.addAttribute("buffetList", buffetList);
 		return "admin/buffetSelection.html";
+	}
+	
+	@GetMapping("/admin/modifyBuffetDataForm/{id}")
+	public String modifyBuffetData(@PathVariable("id") Long id, Model model) {
+		Buffet buffet = this.buffetService.findBuffetById(id);
+		model.addAttribute("buffet", buffet);
+		return "admin/modifyBuffetDataForm.html";
+	}
+	
+	@PostMapping("/admin/modifyBuffetData/{id}")
+	public String modifyBuffetData(@Valid @ModelAttribute("editedBuffet") Buffet editedBuffet, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+		//this.buffetValidator.validate(buffet, bindingResult);
+		
+		if(!bindingResult.hasErrors()) {
+			Buffet buffet = this.buffetService.findBuffetById(id);
+			buffet.setNome(editedBuffet.getNome());
+			buffet.setDescrizione(editedBuffet.getDescrizione());
+			this.buffetService.save(buffet);
+			return "admin/home.html";
+		}
+		
+		return "admin/modifyBuffetDataForm.html";
 	}
 	
 }
