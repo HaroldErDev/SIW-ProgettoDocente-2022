@@ -24,7 +24,7 @@ Questo è lo sviluppo di un progetto proposto dal docente per il corso di Sistem
 - [x] Cancellazione Buffet
 - [x] Cancellazione Piatto
 - [x] Modifica Chef
-- [ ] Modidica Buffet
+- [x] Modifica Buffet
 - [ ] Modifica Piatto
 
 **Utente Generico**
