@@ -20,12 +20,15 @@ Questo è lo sviluppo di un progetto proposto dal docente per il corso di Sistem
 - [x] Inserimento Chef
 - [x] Inserimento Buffet
 - [x] Inserimento Piatto
+- [x] Inserimento Ingrediente
 - [x] Cancellazione Chef
 - [x] Cancellazione Buffet
 - [x] Cancellazione Piatto
+- [x] Cancellazione Ingrediente
 - [x] Modifica Chef
 - [x] Modifica Buffet
-- [ ] Modifica Piatto
+- [x] Modifica Piatto
+- [x] Modifica Ingrediente
 
 **Utente Generico**
 - [x] Registrazione Utente Generico Tramite Credenziali
