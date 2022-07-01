@@ -74,7 +74,6 @@ public class PiattoController {
 		return "admin/piattoSelection.html";
 	}
 	
-	
 	@GetMapping("/admin/modifyPiattoDataForm/{id}")
 	public String modifyPiattoData(@PathVariable("id") Long id, Model model) {
 		Piatto piatto = this.piattoService.findPiattoById(id);
