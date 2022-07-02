@@ -32,7 +32,7 @@ section {
 	font-family: monospace;
 	height: 60px;
 	text-align: center;
-	background-color: white;
+	background-color: black;
 }
 
 .link {
@@ -41,7 +41,7 @@ section {
 
 .link a {
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 .link a:hover {

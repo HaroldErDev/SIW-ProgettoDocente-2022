@@ -61,7 +61,7 @@ public class PiattoController {
 	}
 	
 	@GetMapping("/admin/modifyPiatto")
-	public String deletePiatto(Model model) {
+	public String modifyPiatto(Model model) {
 		List<Piatto> piatti = this.piattoService.findAllPiatti();
 		model.addAttribute("piatti", piatti);
 		return "/admin/modifyPiatto.html";

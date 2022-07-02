@@ -17,7 +17,9 @@
 		<div id="chef-container">
 			<div class="chef-card" th:each="chef : ${chefList}">
 				<div class="image">
-					<img th:src="${chef.imageUrl}" />
+					<img th:if="${chef.imageUrl.isEmpty()}" src="/images/chefIcon.jpg" />
+					
+					<img th:unless="${chef.imageUrl.isEmpty()}" th:src="${chef.imageUrl}" />
 				</div>
 				
 				<div class="desc">

@@ -13,7 +13,9 @@
 		<div id="chef-container">
 			<div class="chef-card">
 				<div class="header">
-					<img th:src="${chef.imageUrl}" />
+					<img th:if="${chef.imageUrl.isEmpty()}" src="/images/chefIcon.jpg" />
+					
+					<img th:unless="${chef.imageUrl.isEmpty()}" th:src="${chef.imageUrl}" />
 				</div>
 				
 				<div class="info">

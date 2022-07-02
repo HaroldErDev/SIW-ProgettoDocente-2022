@@ -22,11 +22,14 @@ section {
 	padding: 10px;
 	font-size: 20px;
 	font-family: monospace;
-	background-color: white;
+	background-color: black;
+	color: white;
 }
 
 .info strong {
 	font-style: italic;
+	/*color: #9a9a9a;*/
+	color: red;
 }
 
 .title {

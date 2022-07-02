@@ -65,7 +65,7 @@ public class BuffetController {
 	}
 	
 	@GetMapping("/admin/modifyBuffet")
-	public String deleteBuffet(Model model) {
+	public String modifyBuffet(Model model) {
 		List<Buffet> buffetList = this.buffetService.findAllBuffet();
 		model.addAttribute("buffetList", buffetList);
 		return "admin/modifyBuffet.html";
