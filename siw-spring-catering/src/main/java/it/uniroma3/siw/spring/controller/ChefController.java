@@ -53,7 +53,7 @@ public class ChefController {
 		if(!bindingResult.hasErrors()) {
 			this.chefService.save(chef);
 			model.addAttribute("chef", chef);
-			return "admin/home.html";
+			return "chefDesc.html";
 		}
 		
 		return "admin/chefForm.html";
@@ -79,7 +79,7 @@ public class ChefController {
 		if(!bindingResult.hasErrors()) {
 			this.chefService.save(chef);
 			model.addAttribute("chef", chef);
-			return "admin/home.html";
+			return "chefDesc.html";
 		}
 		
 		return "admin/modifyChefDataForm.html";

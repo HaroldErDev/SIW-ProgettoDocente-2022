@@ -24,7 +24,7 @@
 			<div class="ingredienti">
 				<strong>Ingredienti: </strong>
 				<span th:each="ingrediente : ${piatto.ingredienti}">
-					<span class="ingrediente" th:text="${ingrediente.nome}">Ingrediente</span>
+					<span class="ingrediente" th:text="${ingrediente.nome} + ','">Ingrediente</span>
 				</span>
 			</div>
 		</div>

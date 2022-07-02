@@ -58,7 +58,7 @@ public class BuffetController {
 		if(!bindingResult.hasErrors()) {
 			this.buffetService.save(buffet, this.chefService.findChefById(chefId));
 			model.addAttribute("buffet", buffet);
-			return "admin/home.html";
+			return "buffetDesc.html";
 		}
 		
 		return "admin/buffetForm.html";
@@ -101,7 +101,8 @@ public class BuffetController {
 			buffet.setNome(editedBuffet.getNome());
 			buffet.setDescrizione(editedBuffet.getDescrizione());
 			this.buffetService.save(buffet);
-			return "admin/home.html";
+			model.addAttribute("buffet", buffet);
+			return "buffetDesc.html";
 		}
 		
 		return "admin/modifyBuffetDataForm.html";

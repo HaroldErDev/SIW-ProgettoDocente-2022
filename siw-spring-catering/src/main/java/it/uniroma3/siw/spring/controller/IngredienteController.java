@@ -84,7 +84,7 @@ public class IngredienteController {
 		if(!bindingResult.hasErrors()) {
 			this.ingredienteService.save(ingrediente);
 			model.addAttribute("ingrediente", ingrediente);
-			return "admin/home.html";
+			return "ingrediente.html";
 		}
 		
 		return "admin/modifyIngredienteDataForm.html";

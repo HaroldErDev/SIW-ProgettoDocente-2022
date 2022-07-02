@@ -97,7 +97,8 @@ public class PiattoController {
 			piatto.setNome(editedPiatto.getNome());
 			piatto.setDescrizione(editedPiatto.getDescrizione());
 			this.piattoService.save(piatto);
-			return "admin/home.html";
+			model.addAttribute("piatto", piatto);
+			return "piatto.html";
 		}
 		
 		return "admin/modifyPiattoDataForm.html";
