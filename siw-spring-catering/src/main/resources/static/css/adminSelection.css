@@ -6,6 +6,15 @@ span {
 	font-family: monospace;
 }
 
+.description a {
+	color: white;
+	text-decoration: none;
+}
+
+.description a:hover {
+	color: lightgray;
+}
+
 .selection {
 	font-family: monospace;
 	text-decoration: none;

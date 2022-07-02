@@ -14,7 +14,7 @@
 		<div class="container" th:each="chef : ${chefList}">
 			<ul>
 				<li>
-					<span th:text="${chef.nome} + ' ' + ${chef.cognome}">Chef</span>
+					<span class="description"><a th:href="@{'/chef' + '/' + ${chef.id}}" th:text="${chef.nome} + ' ' + ${chef.cognome}"></a></span>
 					<a class="selection" th:href="@{'/admin' + '/' + ${chef.id} + '/buffetForm'}">Selziona</a>
 				</li>
 			</ul>
