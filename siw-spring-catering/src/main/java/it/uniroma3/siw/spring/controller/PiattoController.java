@@ -53,6 +53,13 @@ public class PiattoController {
 		return "admin/piattoForm.html";
 	}
 	
+	@GetMapping("/piatto/{id}")
+	public String getPiatto(@PathVariable("id") Long id, Model model) {
+		Piatto piatto = this.piattoService.findPiattoById(id);
+		model.addAttribute("piatto", piatto);
+		return "piatto.html";
+	}
+	
 	@GetMapping("/admin/modifyPiatto")
 	public String deletePiatto(Model model) {
 		List<Piatto> piatti = this.piattoService.findAllPiatti();

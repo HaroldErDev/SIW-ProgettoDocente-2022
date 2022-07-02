@@ -2,7 +2,7 @@ section {
 	margin: 75px 100px;
 }
 
-#ingrediente-container {
+#container {
 	background-color: black;
 	display: flex;
 	flex-direction: column;
@@ -37,4 +37,13 @@ section {
 
 .origine strong {
 	font-style: normal;
+}
+
+.ingredienti {
+	font-family: Garamond;
+	font-size: 25px;
+}
+
+.ingredienti .ingrediente {
+	font-style: italic;
 }

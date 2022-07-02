@@ -15,7 +15,7 @@ nav {
     align-items: center;
     height: 75px;
     padding-left: 10px;
-    padding-right: 10px;
+    /*padding-right: 10px;*/ 		/* E' stato inserito nel .drop_down_menu per avere simmetria con il .dropdown-content */
 }
 
 .main-title strong {
@@ -45,6 +45,7 @@ nav {
 .drop_down_menu {
   	position: relative;
   	display: inline-block;
+  	padding-right: 10px;
 }
 
 .dropdown-content {
@@ -53,10 +54,12 @@ nav {
   	min-width: 108px;
   	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   	z-index: 1;
+  	right: 0;
+  	border-top: 26px solid transparent;
 }
 
 .dropdown-content a {
-	background-color: black;
+	background-color: #3f3f3f;
   	color: lightgray;
   	padding: 15px 20px;
   	text-decoration: none;

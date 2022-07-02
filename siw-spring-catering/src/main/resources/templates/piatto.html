@@ -4,26 +4,28 @@
 	<meta charset="UTF-8" />
 	<link th:href="@{/css/piattoEIngrediente.css}" rel="stylesheet">
 	<link th:replace="fragments/base.html :: style">
-	<title>Ingrediente</title>
+	<title>Piatto</title>
 </head>
 <body>
-	<nav th:replace="fragments/base.html :: navigation(title='Ingrediente')"></nav>
+	<nav th:replace="fragments/base.html :: navigation(title='Piatto')"></nav>
 	
 	<section>
 		<div id="container">
 			<div class="nome">
-				<strong th:text="${ingrediente.nome}"></strong>
+				<strong th:text="${piatto.nome}"></strong>
 			</div>
 			
 			<div class="descrizione">
 				<hr color="#b70000">
 				
-				<p th:text="${ingrediente.descrizione}"></p>
+				<p th:text="${piatto.descrizione}"></p>
 			</div>
 			
-			<div class="origine">
-				Origine ingrediente:
-				<strong th:text="${ingrediente.origine}"></strong>
+			<div class="ingredienti">
+				<strong>Ingredienti: </strong>
+				<span th:each="ingrediente : ${piatto.ingredienti}">
+					<span class="ingrediente" th:text="${ingrediente.nome}">Ingrediente</span>
+				</span>
 			</div>
 		</div>
 	</section>
