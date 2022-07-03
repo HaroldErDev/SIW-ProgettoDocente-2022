@@ -13,25 +13,25 @@
 			<form th:action="@{/register}" method="POST">
 				<div class="input">
 			    	<span class="title">Username: </span>
-			        <input type="text" placeholder="username" required th:field="${credentials.username}"/>
+			        <input type="text" placeholder="Inserisci un nome utente" required th:field="${credentials.username}"/>
 			        <span class="error" th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}"></span>
 			    </div>
 			    
 			    <div class="input">
 			        <span class="title">Password: </span>
-			        <input type="password" placeholder="password" required th:field="${credentials.password}"/>
+			        <input type="password" placeholder="Inserisci una password" required th:field="${credentials.password}"/>
 			        <span class="error" th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.password}"></span>
 			    </div>
 			    
 			    <div class="input">
 			        <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;Nome: </span>
-			        <input type="text" placeholder="nome" required th:field="${user.nome}"/>
+			        <input type="text" placeholder="Inserisci il tuo nome" required th:field="${user.nome}"/>
 			        <span class="error" th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}"></span>
 			    </div>
 			    
 			    <div class="input">
 			        <span class="title">&nbsp;Cognome: </span>
-			        <input type="text" placeholder="cognome" required th:field="${user.cognome}"/>
+			        <input type="text" placeholder="Inserisci il tuo cognome" required th:field="${user.cognome}"/>
 			        <span class="error" th:if="${#fields.hasErrors('user.cognome')}" th:errors="${user.cognome}"></span>
 			    </div>
 			    

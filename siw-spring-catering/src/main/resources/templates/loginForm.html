@@ -21,6 +21,10 @@
 					<input name="password" type="password" required />
 				</div>
 				
+				<div class="login-error">
+					<span class="error" th:if="${param.error != null}">Questo utente non esiste</span>
+				</div>
+				
 				<div class="button">
 					<button type="submit">Accedi</button>
 				</div>
