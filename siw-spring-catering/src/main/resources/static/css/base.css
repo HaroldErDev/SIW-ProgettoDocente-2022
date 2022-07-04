@@ -76,10 +76,29 @@ nav {
   	display: block;
 }
 
-header img {
+header {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+header .background {
 	width: 100%;
 	height: 600px;
 	border-bottom: 5px solid black;
+}
+
+header .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-family: Courier New;
+  letter-spacing: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0px 50px;
+  border-radius: 20px;
 }
 
 footer {
