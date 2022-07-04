@@ -89,15 +89,12 @@ public class PiattoController {
 	}
 	
 	@PostMapping("/admin/modifyPiattoData/{id}")
-	public String modifyPiattoData(@Valid @ModelAttribute("editedPiatto") Piatto editedPiatto, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
-		//this.buffetValidator.validate(buffet, bindingResult);
+	public String modifyPiattoData(@Valid @ModelAttribute("piatto") Piatto editedPiatto, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+		this.piattoValidator.validate(editedPiatto, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
-			Piatto piatto = this.piattoService.findPiattoById(id);
-			piatto.setNome(editedPiatto.getNome());
-			piatto.setDescrizione(editedPiatto.getDescrizione());
-			this.piattoService.save(piatto);
-			model.addAttribute("piatto", piatto);
+			this.piattoService.updatePiatto(editedPiatto);
+			model.addAttribute("piatto", this.piattoService.findPiattoById(id));
 			return "piatto.html";
 		}
 		

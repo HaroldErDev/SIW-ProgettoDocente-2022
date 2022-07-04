@@ -30,6 +30,11 @@ public class PiattoService {
 		this.piattoRepository.save(piatto);
 	}
 	
+	@Transactional
+	public void updatePiatto(Piatto editedPiatto) {
+		this.piattoRepository.updatePiatto(editedPiatto.getNome(), editedPiatto.getDescrizione(), editedPiatto.getId());
+	}
+	
 	public List<Piatto> findAllPiatti() {
 		List<Piatto> piatti = new ArrayList<>();
 		
@@ -47,6 +52,10 @@ public class PiattoService {
 	@Transactional
 	public void deletePiatto(Piatto piatto) {
 		this.piattoRepository.delete(piatto);
+	}
+	
+	public boolean alreadyExists(Piatto piatto) {
+		return this.piattoRepository.existsByNomeAndDescrizione(piatto.getNome(), piatto.getDescrizione());
 	}
 	
 	public Piatto getPiattoByNome(String nome) {

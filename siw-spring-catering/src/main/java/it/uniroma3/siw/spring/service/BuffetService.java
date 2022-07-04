@@ -36,6 +36,11 @@ public class BuffetService {
 		this.buffetRepository.delete(buffet);
 	}
 	
+	@Transactional
+	public void updateBuffet(Buffet editedBuffet) {
+		this.buffetRepository.updateBuffet(editedBuffet.getNome(), editedBuffet.getDescrizione(), editedBuffet.getId());
+	}
+	
 	public Buffet findBuffetById(Long id) {
 		return buffetRepository.findById(id).get();
 	}
@@ -48,6 +53,10 @@ public class BuffetService {
 		}
 		
 		return buffet;
+	}
+	
+	public boolean alreadyExists(Buffet buffet) {
+		return this.buffetRepository.existsByNomeAndDescrizione(buffet.getNome(), buffet.getDescrizione());
 	}
 	
 	public Buffet getBuffet(String nome) {

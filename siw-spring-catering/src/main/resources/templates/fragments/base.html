@@ -35,6 +35,11 @@
 		</div>
 	</nav>
 	
+	<header th:fragment="header(image, text)">
+		<img class="background" th:src="'/images' + '/' + ${image}" />
+		<div class="centered" th:text="${text}">TEXT</div>
+	</header>
+	
 	<footer th:fragment="footer">
 		<div class="footer-info">
 			SIW - Servizi Di Catering - @Tiziano Tinari 2022

@@ -9,10 +9,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='Servizi Catering')"></nav>
 	
-	<header>
-		<img class="background" src="/images/catering.jpg" />
-		<div class="centered">CATERING</div>
-	</header>
+	<header th:replace="fragments/base.html :: header(image='catering.jpg', text='CATERING')"></header>
 	
 	<section>
 		<div id="flex-container">

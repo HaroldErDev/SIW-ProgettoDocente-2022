@@ -9,10 +9,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='I Nostri Buffet')"></nav>
 	
-	<header>
-		<img class="background" src="/images/buffetGroup.jpg" />
-		<div class="centered">BUFFET</div>
-	</header>
+	<header th:replace="fragments/base.html :: header(image='buffetGroup.jpg', text='BUFFET')"></header>
 	
 	<section>
 		<div id="buffet-container">

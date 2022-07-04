@@ -9,10 +9,7 @@
 <body>
 	<nav th:replace="fragments/base.html :: navigation(title='I Nostri Chef')"></nav>
 	
-	<header>
-		<img class="background" src="/images/chefGroup.jpg" />
-		<div class="centered">CHEF</div>
-	</header>
+	<header th:replace="fragments/base.html :: header(image='chefGroup.jpg', text='CHEF')"></header>
 	
 	<section>
 		<div id="chef-container">

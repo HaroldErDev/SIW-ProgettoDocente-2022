@@ -8,6 +8,6 @@ import it.uniroma3.siw.spring.model.Chef;
 @Repository
 public interface ChefRepository extends CrudRepository<Chef, Long> {
 	
-	public boolean existsByNomeAndCognomeAndNazionalita(String nome, String cognome, String nazionalita);
+	public boolean existsByNomeAndCognomeAndNazionalitaAndImageUrl(String nome, String cognome, String nazionalita, String imageUrl);
 	
 }

@@ -23,8 +23,12 @@ public class BuffetValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		Buffet buffet = (Buffet)target;
 		
-		if(this.buffetService.getBuffet(buffet.getNome().trim()) != null) {
+		/*if(this.buffetService.getBuffet(buffet.getNome().trim()) != null) {
 			errors.reject("buffet.nome.duplicato");
+		}*/
+		
+		if(this.buffetService.alreadyExists(buffet)) {
+			errors.reject("buffet.duplicato");
 		}
 	}
 	

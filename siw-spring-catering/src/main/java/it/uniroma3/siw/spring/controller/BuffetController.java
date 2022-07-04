@@ -93,15 +93,12 @@ public class BuffetController {
 	}
 	
 	@PostMapping("/admin/modifyBuffetData/{id}")
-	public String modifyBuffetData(@Valid @ModelAttribute("editedBuffet") Buffet editedBuffet, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
-		//this.buffetValidator.validate(buffet, bindingResult);
+	public String modifyBuffetData(@Valid @ModelAttribute("buffet") Buffet editedBuffet, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
+		this.buffetValidator.validate(editedBuffet, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
-			Buffet buffet = this.buffetService.findBuffetById(id);
-			buffet.setNome(editedBuffet.getNome());
-			buffet.setDescrizione(editedBuffet.getDescrizione());
-			this.buffetService.save(buffet);
-			model.addAttribute("buffet", buffet);
+			this.buffetService.updateBuffet(editedBuffet);
+			model.addAttribute("buffet", this.buffetService.findBuffetById(id));
 			return "buffetDesc.html";
 		}
 		
