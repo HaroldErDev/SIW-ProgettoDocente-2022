@@ -25,5 +25,11 @@ public class ChefValidator implements Validator {
 			errors.reject("chef.duplicato");
 		}
 	}
-
+	
+	public void validateUpdate(Object target, Errors errors) {
+		if(this.chefService.alreadyExistsWithDifferentId((Chef)target)) {
+			errors.reject("chef.duplicato");
+		}
+	}
+	
 }

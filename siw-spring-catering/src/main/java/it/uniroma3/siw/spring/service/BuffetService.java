@@ -56,7 +56,11 @@ public class BuffetService {
 	}
 	
 	public boolean alreadyExists(Buffet buffet) {
-		return this.buffetRepository.existsByNomeAndDescrizione(buffet.getNome(), buffet.getDescrizione());
+		return this.buffetRepository.existsByNome(buffet.getNome());
+	}
+	
+	public boolean alreadyExistsWithDifferentId(Buffet buffet) {
+		return this.buffetRepository.existsByNomeAndIdNot(buffet.getNome(), buffet.getId());
 	}
 	
 	public Buffet getBuffet(String nome) {

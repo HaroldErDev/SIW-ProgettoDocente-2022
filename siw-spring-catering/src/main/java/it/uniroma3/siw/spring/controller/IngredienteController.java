@@ -79,7 +79,7 @@ public class IngredienteController {
 	
 	@PostMapping("/admin/modifyIngredienteData/{id}")
 	public String modifyIngredienteData(@Valid @ModelAttribute("ingrediente") Ingrediente ingrediente, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
-		this.ingredienteValidator.validate(ingrediente, bindingResult);
+		this.ingredienteValidator.validateUpdate(ingrediente, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
 			this.ingredienteService.save(ingrediente);

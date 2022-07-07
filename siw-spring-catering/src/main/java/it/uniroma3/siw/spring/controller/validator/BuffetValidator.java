@@ -32,4 +32,12 @@ public class BuffetValidator implements Validator {
 		}
 	}
 	
+	public void validateUpdate(Object target, Errors errors) {
+		Buffet buffet = (Buffet)target;
+		
+		if(this.buffetService.alreadyExistsWithDifferentId(buffet)) {
+			errors.reject("buffet.duplicato");
+		}
+	}
+	
 }

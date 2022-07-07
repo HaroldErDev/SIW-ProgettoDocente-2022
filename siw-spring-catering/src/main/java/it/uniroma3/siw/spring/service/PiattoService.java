@@ -55,7 +55,11 @@ public class PiattoService {
 	}
 	
 	public boolean alreadyExists(Piatto piatto) {
-		return this.piattoRepository.existsByNomeAndDescrizione(piatto.getNome(), piatto.getDescrizione());
+		return this.piattoRepository.existsByNome(piatto.getNome());
+	}
+	
+	public boolean alreadyExistsWithDifferentId(Piatto piatto) {
+		return this.piattoRepository.existsByNomeAndIdNot(piatto.getNome(), piatto.getId());
 	}
 	
 	public Piatto getPiattoByNome(String nome) {

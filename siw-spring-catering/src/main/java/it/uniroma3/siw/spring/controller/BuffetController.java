@@ -94,7 +94,7 @@ public class BuffetController {
 	
 	@PostMapping("/admin/modifyBuffetData/{id}")
 	public String modifyBuffetData(@Valid @ModelAttribute("buffet") Buffet editedBuffet, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
-		this.buffetValidator.validate(editedBuffet, bindingResult);
+		this.buffetValidator.validateUpdate(editedBuffet, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
 			this.buffetService.updateBuffet(editedBuffet);

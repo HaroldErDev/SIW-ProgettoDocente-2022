@@ -15,7 +15,9 @@ public interface PiattoRepository extends CrudRepository<Piatto, Long> {
 	
 	public Optional<Piatto> findByNome(String nome);
 	
-	public boolean existsByNomeAndDescrizione(String nome, String descrizione);
+	public boolean existsByNome(String nome);
+	
+	public boolean existsByNomeAndIdNot(String nome, Long id);
 	
 	@Modifying
 	@Query("update Piatto p set p.nome = :nome, p.descrizione = :descrizione where p.id = :id")

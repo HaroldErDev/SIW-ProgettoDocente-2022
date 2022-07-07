@@ -28,4 +28,12 @@ public class IngredienteValidator implements Validator {
 		}
 	}
 	
+	public void validateUpdate(Object target, Errors errors) {
+		Ingrediente ingrediente = (Ingrediente)target;
+		
+		if(this.ingredienteService.alreadyExistsWithDifferentId(ingrediente)) {
+			errors.reject("ingrediente.duplicato");
+		}
+	}
+	
 }

@@ -34,7 +34,11 @@ public class IngredienteService {
 	}
 	
 	public boolean alreadyExists(Ingrediente ingrediente) {
-		return this.ingredienteRepository.existsByNomeAndOrigineAndDescrizione(ingrediente.getNome(), ingrediente.getOrigine(), ingrediente.getDescrizione());
+		return this.ingredienteRepository.existsByNomeAndOrigine(ingrediente.getNome(), ingrediente.getOrigine());
+	}
+	
+	public boolean alreadyExistsWithDifferentId(Ingrediente ingrediente) {
+		return this.ingredienteRepository.existsByNomeAndOrigineAndIdNot(ingrediente.getNome(), ingrediente.getOrigine(), ingrediente.getId());
 	}
 	
 	public List<Ingrediente> findAllIngredienti() {

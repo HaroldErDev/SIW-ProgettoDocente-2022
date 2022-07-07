@@ -74,7 +74,7 @@ public class ChefController {
 	
 	@PostMapping("/admin/modifyChefData/{id}")
 	public String modifyChefData(@Valid @ModelAttribute("chef") Chef chef, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
-		this.chefValidator.validate(chef, bindingResult);
+		this.chefValidator.validateUpdate(chef, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
 			this.chefService.save(chef);

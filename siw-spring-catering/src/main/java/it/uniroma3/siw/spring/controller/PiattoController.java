@@ -90,7 +90,7 @@ public class PiattoController {
 	
 	@PostMapping("/admin/modifyPiattoData/{id}")
 	public String modifyPiattoData(@Valid @ModelAttribute("piatto") Piatto editedPiatto, BindingResult bindingResult, @PathVariable("id") Long id, Model model) {
-		this.piattoValidator.validate(editedPiatto, bindingResult);
+		this.piattoValidator.validateUpdate(editedPiatto, bindingResult);
 		
 		if(!bindingResult.hasErrors()) {
 			this.piattoService.updatePiatto(editedPiatto);

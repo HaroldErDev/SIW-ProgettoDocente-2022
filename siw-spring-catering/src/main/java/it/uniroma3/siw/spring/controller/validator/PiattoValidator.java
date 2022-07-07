@@ -31,5 +31,13 @@ public class PiattoValidator implements Validator {
 			errors.reject("piatto.duplicato");
 		}
 	}
+	
+	public void validateUpdate(Object target, Errors errors) {
+		Piatto piatto = (Piatto)target;
+		
+		if(this.piattoService.alreadyExistsWithDifferentId(piatto)) {
+			errors.reject("piatto.duplicato");
+		}
+	}
 
 }
